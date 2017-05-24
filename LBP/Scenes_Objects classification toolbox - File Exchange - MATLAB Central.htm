@@ -1,0 +1,2985 @@
+<!DOCTYPE html>
+<html class="wf-museoslab-n7-active wf-futurapt-n5-active wf-futurapt-i5-active wf-futurapt-n7-active wf-futurapt-i7-active wf-futurapt-n4-active wf-futurapt-i4-active wf-automate-n7-active wf-minionprosubhead-n4-active wf-active"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Scenes/Objects classification toolbox -  File Exchange - MATLAB Central</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="canonical" href="https://www.mathworks.com/matlabcentral/fileexchange/29800-scenes-objects-classification-toolbox?focused=5185864&amp;tab=example">
+<!-- BEGIN Adobe DTM -->
+<script type="text/javascript" async="" src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/ahy.js"></script><script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/aquant.js" async="" type="text/javascript"></script><script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/satelliteLib-e8d23c2e444abadc572df06537e2def59c01db09.js"></script><script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/mbox-contents-95c6a4d9c82a8d20476522984666120b54192e9b.js"></script><style>.mboxDefault { visibility:hidden; }</style><script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/target.js"></script><script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/ajax"></script>
+<!-- END Adobe DTM -->
+<link href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/site6.css" rel="stylesheet" type="text/css">
+<link href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/site6_smxs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<!--[if IE 8]>
+<link href="/includes_content/responsive/css/site6_ie8.css" rel="stylesheet" type="text/css">
+<script src="/includes_content/responsive/scripts/bootstrap/html5shiv-printshiv.js"></script>
+<script src="/includes_content/responsive/scripts/bootstrap/respond.min.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<link href="/includes_content/responsive/css/site6_ie9.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<link href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/site6_print.css" rel="stylesheet" type="text/css" media="print">
+<link rel="stylesheet" href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/mlc.css" type="text/css">
+<!--[if IE 8]>
+<link href="/includes_content/responsive/css/templates/mlc_ie8.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if IE 9]>
+<link href="/includes_content/responsive/css/templates/mlc_ie9.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<link rel="stylesheet" href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/fileexchange.css">
+<!--[if IE 8]>
+<link href="/includes_content/responsive/css/apps/fileexchange/fileexchange_ie8.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if IE 9]>
+<link href="/includes_content/responsive/css/apps/fileexchange/fileexchange_ie9.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/jquery-latest.js"></script>
+<script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/jquery.js"></script>
+<script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/bootstrap.js"></script>
+<script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/global.js"></script>
+<script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/anchor.js"></script>
+<script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/xvy5baa.js"></script>
+<style type="text/css">.tk-museo-slab{font-family:"museo-slab",serif;}.tk-futura-pt{font-family:"futura-pt","Arial","Helvetica",sans-serif;}.tk-automate{font-family:"automate",sans-serif;}.tk-minion-pro-subhead{font-family:"minion-pro-subhead",serif;}</style><style type="text/css">@font-face{font-family:museo-slab;src:url(https://fonts.mathworks.com/k/0e548aec395bd99926a27577e842e818def6ba83-l.woff2) format("woff2"),url(https://fonts.mathworks.com/k/0e548aec395bd99926a27577e842e818def6ba83-d.woff) format("woff"),url(https://fonts.mathworks.com/k/0e548aec395bd99926a27577e842e818def6ba83-a.otf) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:futura-pt;src:url(https://fonts.mathworks.com/k/87868ea7533b245fa343d5fd2e370ee0daee1db8-l.woff2) format("woff2"),url(https://fonts.mathworks.com/k/87868ea7533b245fa343d5fd2e370ee0daee1db8-d.woff) format("woff"),url(https://fonts.mathworks.com/k/87868ea7533b245fa343d5fd2e370ee0daee1db8-a.otf) format("opentype");font-weight:500;font-style:normal;}@font-face{font-family:futura-pt;src:url(https://fonts.mathworks.com/k/fa63f4ee95571fac0c3fde550489d0874f44e7d1-l.woff2) format("woff2"),url(https://fonts.mathworks.com/k/fa63f4ee95571fac0c3fde550489d0874f44e7d1-d.woff) format("woff"),url(https://fonts.mathworks.com/k/fa63f4ee95571fac0c3fde550489d0874f44e7d1-a.otf) format("opentype");font-weight:500;font-style:italic;}@font-face{font-family:futura-pt;src:url(https://fonts.mathworks.com/k/78f589bb61056c7dc2c42601e2fd59aa96941141-l.woff2) format("woff2"),url(https://fonts.mathworks.com/k/78f589bb61056c7dc2c42601e2fd59aa96941141-d.woff) format("woff"),url(https://fonts.mathworks.com/k/78f589bb61056c7dc2c42601e2fd59aa96941141-a.otf) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:futura-pt;src:url(https://fonts.mathworks.com/k/599bfc6908295758da16f495738fa5c76ccf9542-l.woff2) format("woff2"),url(https://fonts.mathworks.com/k/599bfc6908295758da16f495738fa5c76ccf9542-d.woff) format("woff"),url(https://fonts.mathworks.com/k/599bfc6908295758da16f495738fa5c76ccf9542-a.otf) format("opentype");font-weight:700;font-style:italic;}@font-face{font-family:futura-pt;src:url(https://fonts.mathworks.com/k/0ffa5e8c8eb076cc21ede9987250dfa4f2af4438-l.woff2) format("woff2"),url(https://fonts.mathworks.com/k/0ffa5e8c8eb076cc21ede9987250dfa4f2af4438-d.woff) format("woff"),url(https://fonts.mathworks.com/k/0ffa5e8c8eb076cc21ede9987250dfa4f2af4438-a.otf) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:futura-pt;src:url(https://fonts.mathworks.com/k/3f4899217323502feaae94c179311206f731a52e-l.woff2) format("woff2"),url(https://fonts.mathworks.com/k/3f4899217323502feaae94c179311206f731a52e-d.woff) format("woff"),url(https://fonts.mathworks.com/k/3f4899217323502feaae94c179311206f731a52e-a.otf) format("opentype");font-weight:400;font-style:italic;}@font-face{font-family:automate;src:url(https://fonts.mathworks.com/k/6cb6312a9a5b058587f363ab4d24071441d52748-l.woff2) format("woff2"),url(https://fonts.mathworks.com/k/6cb6312a9a5b058587f363ab4d24071441d52748-d.woff) format("woff"),url(https://fonts.mathworks.com/k/6cb6312a9a5b058587f363ab4d24071441d52748-a.otf) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:minion-pro-subhead;src:url(https://fonts.mathworks.com/k/d4d1694195e6776198a56670eb3252a367c04b04-l.woff2) format("woff2"),url(https://fonts.mathworks.com/k/d4d1694195e6776198a56670eb3252a367c04b04-d.woff) format("woff"),url(https://fonts.mathworks.com/k/d4d1694195e6776198a56670eb3252a367c04b04-a.otf) format("opentype");font-weight:400;font-style:normal;}</style><script>try{Typekit.load();}catch(e){}</script>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="gKaZJ72aRxy+t8/GC3gmv7AHsNmmrRoec1zi0OXj/X8=" name="csrf-token">
+<script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/application_002.js" type="text/javascript"></script>
+<link href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/application_003.css" media="screen" rel="stylesheet" type="text/css">
+<link href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/application.css" media="screen" rel="stylesheet" type="text/css">
+<link href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/application_002.css" media="all" rel="stylesheet" type="text/css">
+<link href="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/mw_font.css" media="all" rel="stylesheet" type="text/css">
+<script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/application.js" type="text/javascript"></script>
+<meta content="Scenes/Objects classification toolbox - File Exchange - MATLAB Central" property="og:title"><meta content="website" property="og:type"><meta content="http://www.mathworks.com/matlabcentral/fileexchange/29800-scenes-objects-classification-toolbox" property="og:url"><meta content="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/screenshot.jpg" property="og:image"><meta content="Scenes recognition toolbox for vision systems" property="og:description">
+
+<link rel="search" type="application/opensearchdescription+xml" title="Search File Exchange" href="https://www.mathworks.com/matlabcentral/fileexchange/search.xml">
+
+<script type="text/javascript" src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/jquery_002.js"></script>
+<script type="text/javascript">
+(function() {
+// Check if cookies are enabled
+function cookiesEnabled() {
+return $.cookie('check', 'valid', { expires: 1 }) && $.cookie('check') == 'valid';
+}
+// Set the language of the domain and redirect to the domain
+function setDomainLanguage(language) {
+if($.cookie("lang") != null) {
+$.cookie("lang", null, { path: '/', domain: 'ch.mathworks.com'});
+}
+$.cookie("lang", 'lang=' + language, {path: '/', expires: 365, domain: 'ch.mathworks.com'});
+}
+// do not display the domain selector if querystring is not present
+// or if query string has nocookie value
+// or if cookies are disabled
+var displayDomainSelector = true;
+function detectDomain() {
+var queries = {};
+$.each(document.location.search.substr(1).split('&'), function(c,q){
+if(q != undefined && q != "") {
+var i = q.split('=');
+if(i[1] != undefined) {
+queries[i[0].toString()] = i[1].toString();
+}
+}
+});
+var requested_domain = (queries['requestedDomain'] != undefined) ? queries['requestedDomain'] : "";
+var nocookie = (queries['nocookie'] != undefined) ? queries['nocookie'] : "";
+var client = (queries['client'] != undefined) ? queries['client'] : "";
+if(requested_domain == "" || nocookie == "true" || !cookiesEnabled() || client == "addons" || window.overrideDomainSelector) {
+displayDomainSelector = false;
+}
+}
+detectDomain();
+function extractDomain(url) {
+var domain;
+//find & remove protocol (http, ftp, etc.) and get domain
+if (url.indexOf("://") > -1) {
+domain = url.split('/')[2];
+} else {
+domain = url.split('/')[0];
+}
+//find & remove port number
+domain = domain.split(':')[0];
+return domain;
+}
+function getDomainContent(returnContent) {
+// Get the location information from the marketing site
+$.ajax({
+url : "/includes_content/domainSelect/location.html",
+type : "get",
+async: false,
+success : function(data) {
+$("#location_content").html(data);
+var button_link = $("#button_link").text();
+var current_location = $("#current_location").text();
+var location_key = $("#location_key").text();
+//Set the location in the text and button
+$(".text_location").text(current_location);
+$("#domain_select_button").text("Select " + current_location);
+// if the current location is different from the browser location, update the button functionality
+var browser_domain = extractDomain(window.location.href);
+if(button_link.indexOf(browser_domain) == -1) {
+// Get the current page link from the links within the selector
+new_button_link = $("." + location_key).attr("href");
+$("#domain_select_button").attr("href",new_button_link);
+$("#domain_select_button").removeAttr("data-dismiss");
+}
+}
+});
+if(returnContent) {
+return $('#country-unselected').html();
+}
+}
+$(document).ready(function () {
+//setLocation();
+// determine if links need to be rewritten
+if ( $( "#country-unselected li a" ).length ) {
+$("#country-unselected li a").each(function() {
+var link_url = $(this).attr("href").replace(/%26requestedDomain(%3D[^%26|&]*)?|requestedDomain(%3D[^%26|&]*)?(%26)?/, "");
+$(this).attr("href", link_url);
+});
+}
+if ( $( "li.headernav_login > a" ).length ) {
+var login_url = $("li.headernav_login > a").attr("href").replace(/%26requestedDomain(%3D[^%26|&]*)?|requestedDomain(%3D[^%26|&]*)?(%26)?/, "");
+$("li.headernav_login > a").attr("href", login_url);
+}
+if ( $( "li.mwa-nav_logout > a" ).length ) {
+var login_url = $("li.mwa-nav_logout > a").attr("href").replace(/%26requestedDomain(%3D[^%26|&]*)?|requestedDomain(%3D[^%26|&]*)?(%26)?/, "");
+$("li.mwa-nav_logout > a").attr("href", login_url);
+}
+if ( $( ".mwa-nav li a" ).length ) {
+$(".mwa-nav li a").each(function() {
+var link_url = $(this).attr("href").replace(/%26requestedDomain(%3D[^%26|&]*)?|requestedDomain(%3D[^%26|&]*)?(%26)?/, "");
+$(this).attr("href", link_url);
+});
+}
+$('body').on('click','.footernav_country a',function(){
+getDomainContent(false);
+});
+// set the click function for Switzerland/English link
+$('body').on('click','#swiss_english',function(){
+setDomainLanguage('en');
+});
+// set the click function for Switzerland/French link
+$('body').on('click','#swiss_french',function(){
+setDomainLanguage('fr');
+});
+// set the click function for the Switzerland/German link
+$('body').on('click','#swiss_german',function(){
+setDomainLanguage('de');
+});
+});
+// onload functionality for the selector
+$(document).ready(function () {
+if(displayDomainSelector) {
+getDomainContent(false);
+$('#country-unselected').modal('show');
+}
+});
+})(jQuery);
+</script>
+<script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/satellite-5480c4083639370018670600.js"></script><script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/s-code-contents-73da148cb454c4f6e395aa8df704854c99540662.js"></script><style type="text/css" id="ki-tts-t2"></style><style type="text/css" id="ki-tts-kv"></style></head>
+  
+<body id="responsive_b" class="mlc"><div id="mboxImported-default-target-global-mbox-0" style="visibility: visible; display: block;"></div>
+
+  <!-- Mobile TopNav: Start -->
+<div class="header visible-xs visible-sm" id="header_mobile" translate="no" style="">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle topnav_toggle" data-toggle="collapse" data-target="#topnav_collapse">
+<span class="sr-only">Toggle Main Navigation</span>
+<span class="icon-menu"></span>
+</button>
+<a href="https://www.mathworks.com/?s_tid=gn_logo" class="svg_link navbar-brand">
+<img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/pic-header-mathworks-logo.svg" class="mw_logo" alt="MathWorks">
+</a>
+</div>
+</div>
+</div>
+<div class="row visible-xs visible-sm">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse" id="topnav_collapse">
+<ul class="nav navbar-nav" id="topnav">
+<li class="headernav_login dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      nazmul
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu" id="mwa-nav">
+      <li class="mwa-nav_account">
+        <a href="https://www.mathworks.com/mwaccount/">My Account</a>
+      </li>
+      <li class="mwa-nav_associate">
+        <a href="https://www.mathworks.com/licensecenter/workflows/associate_license?s_tid=gn_aslc">Associate License</a>
+      </li>
+      <li class="mwa-nav_logout">
+        <a href="https://www.mathworks.com/login/logout?uri=https%3A%2F%2Fwww.mathworks.com%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample">Log Out</a>
+      </li>
+  </ul>
+</li>
+<li class="topnav_products "><a href="https://www.mathworks.com/products.html?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="https://www.mathworks.com/solutions.html?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="https://www.mathworks.com/academia.html?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="https://www.mathworks.com/support/?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="https://www.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="https://www.mathworks.com/company/events.html?s_tid=gn_ev">Events</a></li>
+<li class="headernav_contact"><a href="https://www.mathworks.com/company/aboutus/contact_us.html?s_tid=gn_cntus">Contact Us</a></li>
+<li class="headernav_store"><a href="https://www.mathworks.com/store?s_cid=store_top_nav&amp;s_tid=gn_store">How to Buy</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Mobile TopNav: End -->
+<!-- Desktop TopNav: Start -->
+<div class="header hidden-xs hidden-sm" id="header_desktop" translate="no">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<div class="collapse navbar-collapse" id="headernav_collapse">
+<ul class="nav navbar-nav navbar-right" id="headernav">
+<li class="headernav_contact"><a href="https://www.mathworks.com/company/aboutus/contact_us.html?s_tid=gn_cntus">Contact Us</a></li>
+<li class="headernav_store"><a href="https://www.mathworks.com/store?s_cid=store_top_nav&amp;s_tid=gn_store">How to Buy</a></li>
+<li class="headernav_login dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      nazmul
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu" id="mwa-nav">
+      <li class="mwa-nav_account">
+        <a href="https://www.mathworks.com/mwaccount/">My Account</a>
+      </li>
+      <li class="mwa-nav_associate">
+        <a href="https://www.mathworks.com/licensecenter/workflows/associate_license?s_tid=gn_aslc">Associate License</a>
+      </li>
+      <li class="mwa-nav_logout">
+        <a href="https://www.mathworks.com/login/logout?uri=https%3A%2F%2Fwww.mathworks.com%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample">Log Out</a>
+      </li>
+  </ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<div class="navbar-header">
+<div class="logo_container hidden-xs hidden-sm">
+<a href="https://www.mathworks.com/?s_tid=gn_logo" class="svg_link pull-left">
+<img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/pic-header-mathworks-logo.svg" class="mw_logo" alt="MathWorks">
+</a>
+</div>
+<div class="navbar-collapse collapse hidden-xs hidden-sm">
+<ul class="nav navbar-nav" id="topnav">
+<li class="topnav_products "><a href="https://www.mathworks.com/products.html?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="https://www.mathworks.com/solutions.html?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="https://www.mathworks.com/academia.html?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="https://www.mathworks.com/support/?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="https://www.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="https://www.mathworks.com/company/events.html?s_tid=gn_ev">Events</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Desktop TopNav: End -->
+<!-- Conjoined Header: Start -->
+<div class="sticky_header_container includes_subnav affix">
+<!-- Section Header: Start -->
+<div class="section_header level_3">
+<div class="container">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<!-- Search File Exchange -->
+<div id="search_scope_fx" class="collapse in">
+<form id="fx_search_form" name="mlcsearch_form" method="get" data-language="en" action="/matlabcentral/fileexchange">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search File Exchange</label>
+<input class="form-control conjoined_search fileexchange-search" autocomplete="off" name="term" placeholder="Search File Exchange" id="fxsearch" type="text">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">File Exchange</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_support" class="site_search_scope_trigger"><a href="#">Support</a></li>
+<li data-toggle="collapse" data-target="#search_scope_site" class="site_search_scope_trigger"><a href="#">MathWorks</a></li>
+</ul>
+<script>
+$(".support_search_scope_trigger, .site_search_scope_trigger").click(function() {
+$("#search_scope_fx").removeClass("in");
+$("#query").val($("#fxsearch").val());
+$("#supportsearch").val($("#fxsearch").val());
+});
+</script>
+<button type="submit" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<!-- End Search File Exchange -->
+<!-- Support Search -->
+<div id="search_scope_support" class="collapse">
+<form id="supportsearch_form" name="supportsearch_form" method="get" data-language="en" action="/support/search_results.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Support</label>
+<input class="form-control conjoined_search" autocomplete="off" name="q" placeholder="Search Support" id="supportsearch" type="text">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Support</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_fx" class="fileexchange_search_scope_trigger"><a href="#">File Exchange</a></li>
+<li data-toggle="collapse" data-target="#search_scope_site" class="support_search_scope_trigger"><a href="#">MathWorks</a></li>
+</ul>
+<script>
+$(".support_search_scope_trigger, .fileexchange_search_scope_trigger").click(function() {
+$("#search_scope_support").removeClass("in");
+$("#fxsearch").val($("#supportsearch").val());
+$("#query").val($("#supportsearch").val());
+});
+</script>
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<!-- End Support Search -->
+<!-- Search MathWorks.com -->
+<div id="search_scope_site" class="collapse">
+<form name="search" id="site_search" class="site_search" action="/search/site_search.html" method="get">
+<div class="input-group">
+<label class="sr-only">Search MathWorks.com</label>
+<input name="c[]" value="entire_site" type="hidden">
+<input name="q" id="query" class="form-control conjoined_search" placeholder="Search MathWorks.com" autocomplete="off" \="" type="text">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">MathWorks</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_fx" class="fileexchange_search_scope_trigger"><a href="#">File Exchange</a></li>
+<li data-toggle="collapse" data-target="#search_scope_support" class="support_search_scope_trigger"><a href="#">Support</a></li>
+</ul>
+<script>
+$(".support_search_scope_trigger, .fileexchange_search_scope_trigger").click(function() {
+$("#search_scope_site").removeClass("in");
+$("#fxsearch").val($("#query").val());
+$("#supportsearch").val($("#query").val());
+});
+</script>
+<button type="submit" id="searchbutton" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5 has_horizontal_local_nav" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title add_cursor_pointer">
+<p class="h1">File Exchange</p>
+</div>
+<button type="button" class="navbar-toggle collapsed subnav visible-xs visible-sm" data-toggle="collapse" data-target=".mobile_subnav_content"> <span class="icon-arrow-down icon_24"></span> </button>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div>
+<script>
+$(".section_header_title").click(function(){
+$(window.location).attr('href', '/matlabcentral/fileexchange/');
+});
+</script>
+<!-- Section Header: End -->
+<!-- Mobile Local Nav: Start -->
+<div class="row visible-xs visible-sm" id="mobile_subnav">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse mobile_subnav_content">
+<ul class="nav navbar-nav subnav">
+<li class="dropdown">
+  <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MATLAB Central<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li class="topnav_about_mlc"><a href="https://www.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community Home</a></li>
+    <li class="topnav_answers"><a href="https://www.mathworks.com/matlabcentral/answers/index/?s_tid=gn_mlc_an">MATLAB Answers</a></li>
+    <li class="topnav_fileexchange"><a href="https://www.mathworks.com/matlabcentral/fileexchange/?s_tid=gn_mlc_fx">File Exchange</a></li>
+    <li class="topnav_cody"><a href="https://www.mathworks.com/matlabcentral/cody/?s_tid=gn_mlc_cody">Cody</a></li>
+    <li class="topnav_blogs"><a href="http://blogs.mathworks.com/?s_tid=gn_mlc_blg">Blogs</a></li>
+    <li class="topnav_newsreader"><a href="https://www.mathworks.com/matlabcentral/newsreader/?s_tid=gn_mlc_ng">Newsreader</a></li>
+    <li class="topnav_linkexchange"><a href="https://www.mathworks.com/matlabcentral/linkexchange/?s_tid=gn_mlc_lx">Link Exchange</a></li>
+    <li class="topnav_thingspeak"><a href="https://www.mathworks.com/products/thingspeak.html?s_tid=gn_mlc_TS">ThingSpeak</a></li>
+  </ul>
+</li>
+<li><a href="https://www.mathworks.com/matlabcentral/fileexchange/" id="leftnav_files">Files</a></li>
+<li><a href="https://www.mathworks.com/matlabcentral/fileexchange/authors" id="leftnav_authors">Authors</a></li>
+<li><a href="https://www.mathworks.com/matlabcentral/fileexchange/tags" id="leftnav_tags">Tags</a></li>
+<li><a href="https://www.mathworks.com/matlabcentral/fileexchange/feedbacks" id="leftnav_comments">Comments</a></li>
+  <li class="cta"><a href="https://www.mathworks.com/matlabcentral/fileexchange/authors/my_fileexchange" id="leftnav_my_fx">My File Exchange</a></li>
+<li class="maincta"><a href="https://www.mathworks.com/matlabcentral/fileexchange/submissions/new" class="submitfile" id="leftnav_submit">Submit</a></li>
+<li class="about"><a href="https://www.mathworks.com/matlabcentral/about/fx/" class="hintanchor" id="leftnav_about">About</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Mobile Local Nav: End -->
+</div>
+</div>
+<!-- Horo Nav: Start -->
+<div class="horizontal_nav hidden-xs hidden-sm">
+<div class="horizontal_nav_container">
+<div class="container">
+<div class="row">
+<div class="col-md-8 col-lg-9 hidden-xs hidden-sm">
+<nav class="navbar navbar-default" role="navigation" id="subnav">
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li class="dropdown">
+  <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MATLAB Central<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li class="topnav_about_mlc"><a href="https://www.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community Home</a></li>
+    <li class="topnav_answers"><a href="https://www.mathworks.com/matlabcentral/answers/index/?s_tid=gn_mlc_an">MATLAB Answers</a></li>
+    <li class="topnav_fileexchange"><a href="https://www.mathworks.com/matlabcentral/fileexchange/?s_tid=gn_mlc_fx">File Exchange</a></li>
+    <li class="topnav_cody"><a href="https://www.mathworks.com/matlabcentral/cody/?s_tid=gn_mlc_cody">Cody</a></li>
+    <li class="topnav_blogs"><a href="http://blogs.mathworks.com/?s_tid=gn_mlc_blg">Blogs</a></li>
+    <li class="topnav_newsreader"><a href="https://www.mathworks.com/matlabcentral/newsreader/?s_tid=gn_mlc_ng">Newsreader</a></li>
+    <li class="topnav_linkexchange"><a href="https://www.mathworks.com/matlabcentral/linkexchange/?s_tid=gn_mlc_lx">Link Exchange</a></li>
+    <li class="topnav_thingspeak"><a href="https://www.mathworks.com/products/thingspeak.html?s_tid=gn_mlc_TS">ThingSpeak</a></li>
+  </ul>
+</li>
+<li><a href="https://www.mathworks.com/matlabcentral/fileexchange/" id="leftnav_files">Files</a></li>
+<li><a href="https://www.mathworks.com/matlabcentral/fileexchange/authors" id="leftnav_authors">Authors</a></li>
+<li><a href="https://www.mathworks.com/matlabcentral/fileexchange/tags" id="leftnav_tags">Tags</a></li>
+<li><a href="https://www.mathworks.com/matlabcentral/fileexchange/feedbacks" id="leftnav_comments">Comments</a></li>
+  <li class="cta"><a href="https://www.mathworks.com/matlabcentral/fileexchange/authors/my_fileexchange" id="leftnav_my_fx">My File Exchange</a></li>
+<li class="maincta"><a href="https://www.mathworks.com/matlabcentral/fileexchange/submissions/new" class="submitfile" id="leftnav_submit">Submit</a></li>
+<li class="about"><a href="https://www.mathworks.com/matlabcentral/about/fx/" class="hintanchor" id="leftnav_about">About</a></li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="col-md-4 col-lg-3 hidden-xs hidden-sm">
+<div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="https://www.mathworks.com/programs/trials/trial_request.html?eventid=56763&amp;s_iid=mlcfx_trial_mlc_cta1" class="icon-download">Trial software</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Horo Nav: End -->
+</div>
+<!-- Conjoined Header: End -->
+    
+
+    
+
+  <div class="content_container">
+    <div class="container">        
+      <div class="row">
+        <div class="col-xs-12">
+            
+
+
+
+
+
+
+
+     
+    
+
+
+
+
+    
+  
+
+  <div itemscope="" itemtype="http://schema.org/CreativeWork">
+    
+    
+    
+
+    
+
+    <!-- start-of-the-page-container -->
+    <div class="row">
+      <div class="col-xs-12">
+        <!-- start-of-the-header -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-2">
+            <div id="thumbnail">
+    <a href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/screenshot.jpg" border="0"><img itemprop="image" src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/screenshot.png" alt="image thumbnail" width="100"></a>
+</div>
+
+          </div>
+          <div class="col-xs-12 col-sm-10">
+            <div class="row">
+              <div class="col-xs-12 col-sm-9">
+                <h2 itemprop="name" class="add_font_color_emphasize add_margin_5">Scenes/Objects classification toolbox</h2>
+                <div class="add_margin_5">
+                  <span id="user_version" class="small add_font_color_mediumgray">version 1.2 (19.5 MB) by </span>
+                  <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                    <span itemprop="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris" class="author_inline results_author" data-cp-link-id="1">Sebastien PARIS</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="1" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris">Sebastien PARIS <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/870049.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A13308"><span property="fileExchange_count">34</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">592</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="4.42781">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 88.5562%">4.42781</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</span>
+                  </span>
+                </div>
+                <p id="summary">Scenes recognition toolbox for vision systems</p>
+              </div>
+              <div class="col-xs-12 col-sm-3 section_downsize">
+                <div class="pull-right">
+                  <div class="rating add_margin_5" title="4.33 out of 5 Stars">
+                    <span itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating" class="numberrating">
+                      <div class="rate_scale">
+                        <div class="rated" style="width: 86.6666%;">
+                          <span id="rating_value" itemprop="ratingValue">4.33333</span>
+                        </div>
+                      </div>
+                      <a href="#feedbacks"><span id="rating_count" itemprop="ratingCount">7 Ratings</span> </a>
+                    </span>
+                  </div>
+                  <p class="add_margin_5">
+                    <span id="downloads">58 Downloads</span>
+                    <span class="icon_16 icon-info-circle" data-container="body" data-toggle="popover" role="button" tabindex="0" data-trigger="focus" data-placement="top" title="" data-content="Last 30 days: 58&lt;br&gt; All time: 12,114" data-original-title="Downloads" aria-describedby="popover506129"></span>
+                  </p>
+                  <p class="add_margin_5">
+                    <span id="date_updated">Updated
+                      <span itemprop="datePublished" content="2011-04-25">25 Apr 2011</span>
+                    </span>
+                  </p>
+                        <p>
+        <a href="#license_modal" data-toggle="modal">View License</a>
+      </p>
+
+  <div class="modal fade" id="license_modal" tabindex="-1" role="dialog" aria-labelledby="license_modal_title" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 class="modal-title" id="license_modal_title">License</h3>
+        </div>
+        <div class="modal-body">
+          <p>Copyright (c) 2010, Sebastien Paris
+<br>All rights reserved.</p>
+
+<p>Redistribution and use in source and binary forms, with or without
+<br>modification, are permitted provided that the following conditions are
+<br>met:</p>
+
+<p>    * Redistributions of source code must retain the above copyright
+<br>      notice, this list of conditions and the following disclaimer.
+<br>    * Redistributions in binary form must reproduce the above copyright
+<br>      notice, this list of conditions and the following disclaimer in
+<br>      the documentation and/or other materials provided with the distribution</p>
+
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+<br>AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+<br>IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+<br>ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+<br>LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+<br>CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+<br>SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+<br>INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+<br>CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+<br>ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+<br>POSSIBILITY OF SUCH DAMAGE.
+</p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+                </div>
+              </div>
+              <div class="col-xs-12">
+                <ul class="list-inline pull-right add_clear_both">
+    <li class="add_margin_0">
+      <span id="watchlist" data-project-id="29800" data-contributor-id="1368486" data-redirect-to="/matlabcentral/fileexchange/29800-scenes-objects-classification-toolbox?focused=5185864&amp;tab=example"><form action="https://www.mathworks.com/matlabcentral/fileexchange/watchlists/new" method="GET">
+      <input name="watching" value="29800" type="hidden">
+      <input name="type" value="file" type="hidden">
+      <input name="uri" value="/matlabcentral/fileexchange/29800-scenes-objects-classification-toolbox?focused=5185864" type="hidden">
+      <button class="btn btn-sm companion_btn btn_color_blue">
+      Add to Watchlist </button></form></span>
+    </li>
+  <!-- Start Download action -->
+  <li>
+    <div class="">
+          <div class=""><a href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/download/zip" class="btn btn-sm btn_color_blue link--download" data-file-format="zip" data-logintodownload="false" title="Download">Download</a></div>
+    </div>
+  </li>
+  <!-- End Download action -->
+</ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end-of-the-header -->
+
+        <!-- start-of-the-tabs -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="all-tabs-container">
+              <div>
+  <ul role="tablist" class="nav nav-tabs responsive" id="product_items">
+    <li class="">
+      <a role="tab" data-toggle="tab" href="#overview_tab">Overview</a>
+    </li>
+        <li class="">
+          <a role="tab" data-toggle="tab" href="#functions_tab" aria-expanded="false">Functions</a>
+        </li>
+        <li class="active">
+          <a role="tab" data-toggle="tab" href="#examples_tab" aria-expanded="true">Examples</a>
+        </li>
+  </ul>
+</div>
+<div class="tab-content responsive remove_border">
+  <!-- This renders the detail page from addons-detail-page gem -->
+    <div class="tab-pane" id="overview_tab" data-context="web">
+    <div class="row add_margin_50">
+
+      <div class="col-xs-12 col-md-9">
+        <div id="description" data-add-on-description="true" class="add_margin_50 add_text_wrapping">
+          <p>Scenes/Objects Rocognition toolbox v0.12
+<br>---------------------------------------
+<br>This toolbox provides some basic tools for scenes/object recognition in vision systems.
+<br>Based on supervised classification, this toolbox offerts some 
+state-of-art descriptors coupled with fast and efficient classifiers.
+<br>Descriptors are divided in two famillies: 
+<br>i)  "direct" features computed from images [1,2,3,4,5,19], 
+<br>ii) "dictionnary learning + spatial pooling" features computed from a collection of patches: 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;a) Bag of Features [6,7] and 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;b) Sparse Dictionary learning [8,9]. 
+<br>Large-Scale Linear SVM such Liblinear [10] or Pagasos [11] are used 
+to train models since features are almost perfectly linearly separable. 
+<br>Non-linear Kernels extension for additive homogeneous kernels (chi2,
+ intersection histogram, etc...) is performed through features map 
+method [12,22].
+<br>The main objective of this toolbox is to deliver simple but 
+efficient tools, easy to modify, mainly written in C codes with a matlab
+ interface.  </p>
+
+<p>Please open readme.txt for full instructions
+</p>
+        </div>
+
+        <div id="feedbacks">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Comments and Ratings (<span id="feedbacks_count">26</span>)</h3>
+
+      <div id="feedbacks_edit" data-feedbacks-edit-path="">
+              <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-inline add_margin_0">
+          <li><h4>Rate this Submission</h4></li>
+          <li>
+            <ul class="list-inline list-unstyled star-rating">
+                <li>
+                  <a href="https://www.mathworks.com/matlabcentral/fileexchange/feedbacks/create?id=29800&amp;profile_id=6866457&amp;rating=1&amp;stamp=1494813303" class="one-star" data-method="post" data-remote="true" id="star1" name="1" rel="nofollow">1</a>
+                </li>
+
+                <script>
+                  var toggleFeedbackLoading = function() { $("#loading").toggle() };
+
+                  $("#star1")
+                    .on("ajax:beforeSend", toggleFeedbackLoading)
+                    .on("ajax:failure", toggleFeedbackLoading);
+                </script>
+
+                <li>
+                  <a href="https://www.mathworks.com/matlabcentral/fileexchange/feedbacks/create?id=29800&amp;profile_id=6866457&amp;rating=2&amp;stamp=1494813303" class="two-stars" data-method="post" data-remote="true" id="star2" name="2" rel="nofollow">2</a>
+                </li>
+
+                <script>
+                  var toggleFeedbackLoading = function() { $("#loading").toggle() };
+
+                  $("#star2")
+                    .on("ajax:beforeSend", toggleFeedbackLoading)
+                    .on("ajax:failure", toggleFeedbackLoading);
+                </script>
+
+                <li>
+                  <a href="https://www.mathworks.com/matlabcentral/fileexchange/feedbacks/create?id=29800&amp;profile_id=6866457&amp;rating=3&amp;stamp=1494813303" class="three-stars" data-method="post" data-remote="true" id="star3" name="3" rel="nofollow">3</a>
+                </li>
+
+                <script>
+                  var toggleFeedbackLoading = function() { $("#loading").toggle() };
+
+                  $("#star3")
+                    .on("ajax:beforeSend", toggleFeedbackLoading)
+                    .on("ajax:failure", toggleFeedbackLoading);
+                </script>
+
+                <li>
+                  <a href="https://www.mathworks.com/matlabcentral/fileexchange/feedbacks/create?id=29800&amp;profile_id=6866457&amp;rating=4&amp;stamp=1494813303" class="four-stars" data-method="post" data-remote="true" id="star4" name="4" rel="nofollow">4</a>
+                </li>
+
+                <script>
+                  var toggleFeedbackLoading = function() { $("#loading").toggle() };
+
+                  $("#star4")
+                    .on("ajax:beforeSend", toggleFeedbackLoading)
+                    .on("ajax:failure", toggleFeedbackLoading);
+                </script>
+
+                <li>
+                  <a href="https://www.mathworks.com/matlabcentral/fileexchange/feedbacks/create?id=29800&amp;profile_id=6866457&amp;rating=5&amp;stamp=1494813303" class="five-stars" data-method="post" data-remote="true" id="star5" name="5" rel="nofollow">5</a>
+                </li>
+
+                <script>
+                  var toggleFeedbackLoading = function() { $("#loading").toggle() };
+
+                  $("#star5")
+                    .on("ajax:beforeSend", toggleFeedbackLoading)
+                    .on("ajax:failure", toggleFeedbackLoading);
+                </script>
+
+            </ul>
+          </li>
+          <li><span id="rate_status">(Rating not required)</span></li>
+          <li><img alt="Spinner" id="loading" src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/spinner.gif" style="display: none;"></li>
+        </ul>
+      </div>
+    </div>
+<div class="row">
+  <div class="col-xs-12">
+    <div id="comment_box" class="add_margin_20">
+      <form accept-charset="UTF-8" action="/matlabcentral/fileexchange/feedbacks/create?" before="Element.hide(&quot;rate_status&quot;); Element.show(&quot;loading&quot;)" complete="Element.hide(&quot;loading&quot;)" data-remote="true" id="add_feedback_comment_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="gKaZJ72aRxy+t8/GC3gmv7AHsNmmrRoec1zi0OXj/X8=" type="hidden"></div>
+        <input name="id" value="29800" type="hidden">
+        <input name="stamp" value="1494813303" type="hidden">
+        <input name="profile_id" value="6866457" type="hidden">
+        <textarea name="comment" id="comment" placeholder="Comment on this submission" class="short form-control add_margin_10"></textarea>
+        <div id="comment_buttons" class="hide">
+          <button class="btn btn-sm companion_btn btn_color_blue cancel_button" type="submit">Cancel</button>
+          <input class="btn btn-sm btn_secondary save_button" name="commit" value="Save" type="submit">
+        </div>
+</form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  var toggleFeedbackLoading = function() {
+    if ($.trim($('#comment').val()) === "") {
+        return false;
+    }
+    $("#loading").toggle();
+  };
+
+  $("#add_feedback_comment_form")
+    .on("ajax:beforeSend", toggleFeedbackLoading)
+    .on("ajax:failure", toggleFeedbackLoading)
+    .on("ajax:complete", function() {
+        $("#comment").val('').blur();
+        $("#comment").css('height', 'auto');
+        $("#comment_buttons").addClass('hide');
+  });
+
+  $("#comment_box textarea").bind('focus', function() {
+    $(this).data('holder',$(this).attr('placeholder'));
+    $(this).attr('placeholder','');
+
+    $("#comment_buttons").removeClass('hide');
+    $(this).animate({ height: "8em" }, 400).removeClass('short');
+  }).bind('blur', (function() {
+      $(this).attr('placeholder',$(this).data('holder'));
+  }));
+
+  $("#add_feedback_comment_form .cancel_button").click(function (e) {
+    $("#comment").val('').blur();
+    $("#comment_buttons").addClass('hide');
+    $("#comment").css('height', 'auto');
+  });
+</script>
+
+      </div>
+
+      <div id="feedbacks_list" class="row add_margin_50 comment_container" data-add-on-comment-rating="true">
+            <div class="col-xs-12">
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/8310972-chinnurocks" class="author_inline" data-cp-link-id="2">chinnurocks</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="2" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/8310972-chinnurocks">chinnurocks <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/8310972-chinnurocks"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A1091607"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2016-09-15 05:14:34 UTC">15 Sep 2016</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+              <div class="rating_container">
+                <div class="rating_scale">
+                  <div class="rating ">
+                    <div class="rated" style="width:80.0%;"></div>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/5394987-jinting-zhu" class="author_inline" data-cp-link-id="3">jinting zhu</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="3" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/5394987-jinting-zhu">jinting zhu <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/5394987-jinting-zhu"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A1083002"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2016-06-14 03:49:28 UTC">13 Jun 2016</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+              <div class="rating_container">
+                <div class="rating_scale">
+                  <div class="rating ">
+                    <div class="rated" style="width:80.0%;"></div>
+                  </div>
+                </div>
+              </div>
+            <p>Hi,Sébastien,is it the dltrain.c missing ?</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/5858429-arash" class="author_inline" data-cp-link-id="4">arash</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="4" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/5858429-arash">arash <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/5858429-arash"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A523631"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2015-06-27 06:09:44 UTC">27 Jun 2015</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Sebastien,
+<br>thanks for your excellent work,but please update this to the new version as you said on 2013.
+<br>Thanks</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/4484950-hamed-abdulaziz" class="author_inline" data-cp-link-id="5">hamed abdulaziz</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="5" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/4484950-hamed-abdulaziz">hamed abdulaziz <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/4484950-hamed-abdulaziz"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A379615"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2014-03-26 15:14:42 UTC">26 Mar 2014</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+              <div class="rating_container">
+                <div class="rating_scale">
+                  <div class="rating ">
+                    <div class="rated" style="width:80.0%;"></div>
+                  </div>
+                </div>
+              </div>
+            <p>Dear Sebastien, Can you please guide me how to use this 
+excellent toolbox to classify the medical image into two classes : 
+abnormal and normal ? Thanks in advance.</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris" class="author_inline" data-cp-link-id="6">Sebastien PARIS</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="6" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris">Sebastien PARIS <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/870049.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A13308"><span property="fileExchange_count">34</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">592</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="4.42781">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 88.5562%">4.42781</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2013-09-04 08:23:34 UTC">4 Sep 2013</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Ranju,</p>
+
+<p>With this toolbox and the totally new version that I hope to publish 
+within 1 month, you can retrieve results of more that 50 papers in image
+ categorization...</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/4530087-ranju-mandal" class="author_inline" data-cp-link-id="7">Ranju Mandal</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="7" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/4530087-ranju-mandal">Ranju Mandal <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/4530087-ranju-mandal"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A380787"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2013-09-01 06:36:51 UTC">1 Sep 2013</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Dear Sebastien, Can you please send me the  link of the paper where u have described the method in details? </p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/2665988-a-das" class="author_inline" data-cp-link-id="8">a das</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="8" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/2665988-a-das">a das <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/2665988-a-das"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A120608"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2013-08-19 05:04:05 UTC">19 Aug 2013</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>hi can you say me when I am running the code simple_train.m its giving a error undefined variable X. Can pls solve it????</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris" class="author_inline" data-cp-link-id="9">Sebastien PARIS</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="9" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris">Sebastien PARIS <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/870049.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A13308"><span property="fileExchange_count">34</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">592</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="4.42781">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 88.5562%">4.42781</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2013-05-28 06:55:41 UTC">28 May 2013</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Zbingos... How big is your dataset ?. How many images?. 
+In my current version now everything is passing trough a file so 
+requiering low memory for a just a slight slowdown ..</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/2865431-zbingos" class="author_inline" data-cp-link-id="10">zbingos</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="10" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/2865431-zbingos">zbingos <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/2865431-zbingos"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A142550"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2013-05-27 23:07:56 UTC">27 May 2013</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>
+A&gt; choice_descriptors   = [1]; %mlhoee_spyr=1/mlhmslsd_spyr=2/mlhmslbp_spyr=3/mlhmsldp_spyr=4</p>
+
+<p>a&gt; case [2]:
+<br>Subscripted assignment dimension mismatch.</p>
+
+<p>Error in extract_direct_features (line 85)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X(:
+ , co)          = descriptors(I ,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;descriptors_param{current_descriptor}{:});</p>
+
+<p>b&gt; case [1]:
+<br>Crash out of memory (maybe cause i run it in a 32bit matlab ?)</p>
+
+<p>B&gt; You have right i did not extract the proper descriptor.</p>
+
+<p>Thanks a lot and sorry for the delay in replying.</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris" class="author_inline" data-cp-link-id="11">Sebastien PARIS</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="11" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris">Sebastien PARIS <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/870049.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A13308"><span property="fileExchange_count">34</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">592</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="4.42781">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 88.5562%">4.42781</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2013-05-25 10:01:51 UTC">25 May 2013</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Zbingos,</p>
+
+<p>The version of the toolbox is old compare to my current one. I have 
+to update it I know ... but have to spend of time to check 
+compatibility, debugging etc... In the new version you have</p>
+
+<p>i) New local features: HLBP/HLTP/DV, etc..
+<br>ii) New encoders/pooler: LCC, Local sparse coding, Fisher vector, lp-norm pooling
+<br>iii) cascade up to 3 layers
+<br>iv) cross-training capacity</p>
+
+<p>Everything have been redesign completly compared to the current one...</p>
+
+<p>Actually I don't have time to do this update, hope within 1 month... Please understand.
+<br>To asnwer to your question:
+<br>1) what are the 1 et 2 choices ?</p>
+
+<p>2) norm is a vector (1 x 3). norm(1) for the all concatenated vector,
+ norm(2), for all current level of the pyramid, norm(3) for each 
+individual ROI where you are pooling</p>
+
+<p>3) Did you extract first the corresponding descriptor ?</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/2865431-zbingos" class="author_inline" data-cp-link-id="12">zbingos</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="12" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/2865431-zbingos">zbingos <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/2865431-zbingos"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A142550"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2013-05-24 00:34:28 UTC">23 May 2013</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Hi sebastian,</p>
+
+<p>1. I can not run the "extract_bag_of_features" for the "1" and "2" choice of descriptors. ?</p>
+
+<p>2. Some demo m files does not run so i change the norm from number to matrix e.g: [1,0,0]. Is it right or not?</p>
+
+<p>3. The simple_train.m does not run. The error is this:
+<br>Load descriptor scenes15_denseSIFT_mlhbow_spyr for classifier = liblinear</p>
+
+<p>Error using load
+<br>Unable to read file 'C:\C_DISC\codes\KARA\3
+<br>reco_toolbox\reco_toolbox\features\scenes15_denseSIFT_mlhbow_spyr': no such file or
+<br>directory.</p>
+
+<p>Error in simple_train (line 145)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;load(fullfile(feat_dir , base_name ));</p>
+
+<p>Thanks for your help~time. </p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila" class="author_inline" data-cp-link-id="13">Leila</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="13" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila">Leila <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A140452"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2012-05-31 08:05:01 UTC">31 May 2012</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Hi Sébastien, Thanks for the info! But I did not notice any major changes to the ldp code... Are there traumatic differences?
+<br>Cheers,
+<br>Leila</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/3464772-weixia" class="author_inline" data-cp-link-id="14">Weixia</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="14" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/3464772-weixia">Weixia <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/3464772-weixia"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A246474"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2012-04-30 20:06:46 UTC">30 Apr 2012</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+              <div class="rating_container">
+                <div class="rating_scale">
+                  <div class="rating ">
+                    <div class="rated" style="width:100.0%;"></div>
+                  </div>
+                </div>
+              </div>
+            <p>Dear Sebastian, 
+<br>Thank you for sharing this remarkable toolbox!
+<br>I've just installed the toolbox and run the bag_of_features.m, but 
+unfortunately, en error was reported. It said that "Undefined function 
+'dltrain' for input argument of type 'struct'."
+<br>Error in extract_bag_of_features (line 229)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D(:
+ , : , s , c)  = encoding(X(: , indexdico) ,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encoding_param{current_encoding}{current_descriptor});</p>
+
+<p>Could you please so kind to help me with this little problem? I am really an new hand in this area...
+<br>Best wishes!
+<br>Weixia</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/3464772-weixia" class="author_inline" data-cp-link-id="15">Weixia</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="15" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/3464772-weixia">Weixia <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/3464772-weixia"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A246474"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2012-04-30 19:59:41 UTC">30 Apr 2012</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+              <div class="rating_container">
+                <div class="rating_scale">
+                  <div class="rating add_opacity_50">
+                    <div class="rated" style="width:100.0%;"></div>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris" class="author_inline" data-cp-link-id="16">Sebastien PARIS</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="16" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris">Sebastien PARIS <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/870049.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A13308"><span property="fileExchange_count">34</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">592</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="4.42781">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 88.5562%">4.42781</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2011-10-07 02:53:14 UTC">6 Oct 2011</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Venkat,</p>
+
+<p>1) For large database, I'll plan to use the new functionalities of Matlab 2011b to append/load partially from a file.</p>
+
+<p>2) It's a good idea to separate the datasets. I'll make the modification in the incoming major update of this toolbox</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/223861-venkat-r" class="author_inline" data-cp-link-id="17">Venkat R</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="17" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/223861-venkat-r">Venkat R <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/223861-venkat-r"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A36730"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2011-10-06 20:49:38 UTC">6 Oct 2011</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+              <div class="rating_container">
+                <div class="rating_scale">
+                  <div class="rating ">
+                    <div class="rated" style="width:80.0%;"></div>
+                  </div>
+                </div>
+              </div>
+            <p>Dear Sebastian,
+<br>I was using your extract_bag_of_features.m for my object 
+classification. If possible, can you help me in following problems I am 
+facing...
+<br>1. For a database of size 50,000 samples, there is Out of memory problems coming...
+<br>2. Can I use the dictionary built on one database,  for encoding 
+another database(s). I will normalize all images to a standard size of 
+50x50 and keep the SIFT parameters also the same.</p>
+
+<p>thanking you,</p>
+
+<p>with regards,
+<br>Ramana</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris" class="author_inline" data-cp-link-id="18">Sebastien PARIS</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="18" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris">Sebastien PARIS <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/870049.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A13308"><span property="fileExchange_count">34</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">592</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="4.42781">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 88.5562%">4.42781</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2011-09-16 07:22:52 UTC">16 Sep 2011</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Leila,</p>
+
+<p>I am working on a big update of this toolbox with a lot of new things, stay in touch so ...</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris" class="author_inline" data-cp-link-id="19">Sebastien PARIS</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="19" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris">Sebastien PARIS <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/870049.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A13308"><span property="fileExchange_count">34</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">592</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="4.42781">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 88.5562%">4.42781</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2011-09-16 07:17:28 UTC">16 Sep 2011</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Ishrat,</p>
+
+<p>Please visit the SPAMS webpage (<a href="http://www.di.ens.fr/willow/SPAMS/">http://www.di.ens.fr/willow/SPAMS/</a>),
+ compile the lib with your current system and copy the associate 
+requiered files such mexlasso, mexTrainDL, mexTrainDLmemory in the /core
+ dir of my toolbox</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/2844569-ishrat-badami" class="author_inline" data-cp-link-id="20">Ishrat Badami</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="20" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/2844569-ishrat-badami">Ishrat Badami <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/2844569-ishrat-badami"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A136518"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2011-09-13 13:59:56 UTC">13 Sep 2011</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Dear Sebastian,
+<br>I installed the toolbox as instructed on Ubuntu 10.04 32bit. While 
+running the file extract_bag_of_features.m I get error message 
+<br>??? Invalid MEX-file
+<br>'/home/ishrat/Uni_Bonn/Semester_2/Graphics_2/graphics_lab/Matlab/reco_toolbox/core/mexLasso.mexglx':
+<br>libiomp5.so: cannot open shared object file: No such file or directory.</p>
+
+<p>Error in ==&gt; dl_spyr at 77
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G                      = full(abs(mexLasso(X(: , index) , D(: , : , s , c) ,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options)))'; %(np x K)
+<br>I also unzip the libgln32.zip in core folder. Am I missing something? Please help I am totally stuck.
+<br>Thanks in advance 
+<br>Best
+<br>Ishrat </p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila" class="author_inline" data-cp-link-id="21">Leila</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="21" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila">Leila <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A140452"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2011-09-12 10:12:38 UTC">12 Sep 2011</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>yes, one for each derivative direction. I could output the one for 0 degrees. </p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris" class="author_inline" data-cp-link-id="22">Sebastien PARIS</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="22" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris">Sebastien PARIS <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/870049.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A13308"><span property="fileExchange_count">34</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">592</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="4.42781">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 88.5562%">4.42781</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2011-07-19 13:16:44 UTC">19 Jul 2011</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Leila,</p>
+
+<p>There are in fact 4 LDP images ...
+<br>Maybe I will add an option for display them.</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila" class="author_inline" data-cp-link-id="23">Leila</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="23" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila">Leila <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A140452"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2011-07-10 07:53:49 UTC">10 Jul 2011</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Hi again. Thank you for your answer. Assuming one would 
+like to see the LDP image, is there a way to output it using your 
+function, or a variable in your function? Thanks!</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris" class="author_inline" data-cp-link-id="24">Sebastien PARIS</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="24" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris">Sebastien PARIS <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/870049.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A13308"><span property="fileExchange_count">34</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">592</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="4.42781">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 88.5562%">4.42781</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2011-05-19 05:12:12 UTC">19 May 2011</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Leila. This normalization is often used in computer vision. See Maji'papers for example.</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila" class="author_inline" data-cp-link-id="25">Leila</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="25" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila">Leila <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A140452"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2011-05-18 09:00:42 UTC">18 May 2011</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Dear Sébastien, 
+<br>Thanks for your answer. I have another question: in the normalization type 3, you normalize the square of the L1 norm, why?</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris" class="author_inline" data-cp-link-id="26">Sebastien PARIS</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="26" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris">Sebastien PARIS <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/870049-sebastien-paris"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/870049.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A13308"><span property="fileExchange_count">34</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">592</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="4.42781">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 88.5562%">4.42781</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2011-05-04 05:55:55 UTC">4 May 2011</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+            <p>Leila,
+<br>I use the same convention than in the Zhang paper.</p>
+
+<p>ldporient                Orientation for ldp computation (1 x norient), where norient &lt;= 4 and ldporient(i) = {0,1,2,3}
+<br>	                           ldporient(i) = 0 &lt;=&gt; (I(x_1+1,y_1)-I(x_1,y_1))*(I(x_0+1,y_0)-I(x_0,y_0))&lt; 0
+<br>	                           ldporient(i) = 1 &lt;=&gt; (I(x_1+1,y_1+1)-I(x_1,y_1))*(I(x_0+1,y_0+1)-I(x_0,y_0))&lt; 0
+<br>	                           ldporient(i) = 2 &lt;=&gt; (I(x_1,y_1+1)-I(x_1,y_1))*(I(x_0,y_0+1)-I(x_0,y_0))&lt; 0
+<br>	                           ldporient(i) = 3 &lt;=&gt; (I(x_1-1,y_1+1)-I(x_1,y_1))*(I(x_0-1,y_0+1)-I(x_0,y_0))&lt; 0
+<br>	                           (default ldporient = [0 , 1 , 2 , 3])</p>
+
+<p>Sébastien</p>
+          </div>
+        </div>
+        <div class="row section_downsize add_padding_5">
+          <div class="col-xs-3 col-sm-2">
+            <strong><a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila" class="author_inline" data-cp-link-id="27">Leila</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="27" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila">Leila <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="https://www.mathworks.com/matlabcentral/profile/authors/2858220-leila"><img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="fileExchange">
+      <span class="icon-fileexchange"></span> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=authorid%3A140452"><span property="fileExchange_count">0</span> files</a>
+    </li>
+    <li property="downloads">
+      <span class="icon-download"></span> <span property="downloads_count">0</span> downloads
+    </li>
+      <li property="rating">
+
+        <div class="rating" title="0.0">
+          <div class="rate_scale">
+            <div class="rated" property="aggregateRating" style="width: 0.0%">0.0</div>
+          </div>
+        </div>
+
+      </li>
+  </ul>
+
+  </div>
+</div>
+</strong>
+            <p class="add_margin_0 add_font_color_mediumgray"><time datetime="2011-05-04 05:25:29 UTC">4 May 2011</time></p>
+          </div>
+          <div class="col-xs-9 col-sm-10 comment-body add_text_wrapping">
+              <div class="rating_container">
+                <div class="rating_scale">
+                  <div class="rating ">
+                    <div class="rated" style="width:100.0%;"></div>
+                  </div>
+                </div>
+              </div>
+            <p>Dear Sébastien, 
+<br>Thanks for this helpful code. 
+<br>Where you specify ldporient, how do (x_1,y_1) and (x_0,y_0) 
+correspond to neighborhood pixels in the original paper [Zhang et al, 
+2010]? </p>
+          </div>
+        </div>
+    </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+            <div id="update_notes" class="row add_margin_50 update_notes_container" data-add-on-update-note="true">
+      <div class="col-xs-12">
+        <h3>Updates</h3>
+        <div class="section_downsize">
+          <table>
+            <tbody>
+                <tr>
+                  <td class="add_padding_10 add_font_color_mediumgray cell_20">
+                    <time datetime="2011-04-25 15:35:09 UTC">25 Apr 2011</time>
+                  </td>
+                    <td class="add_padding_10 add_text_wrapping">1.2</td>
+                  <td class="add_padding_10"><p>0.12 - Add new normalization method. 
+<br>- Better default parameters which improve results.
+<br>- Better databases handling.
+<br>- Add "triangle" soft assignement for K-means dictionary learning approach [21]
+</p></td>
+                </tr>
+                <tr>
+                  <td class="add_padding_10 add_font_color_mediumgray cell_20">
+                    <time datetime="2011-04-16 14:29:54 UTC">16 Apr 2011</time>
+                  </td>
+                    <td class="add_padding_10 add_text_wrapping">1.1</td>
+                  <td class="add_padding_10"><p>0.11 
+<br>-Compile SPAMS with -largeArrayDims flag for WIN64 system
+<br>-Can handle any many databases where images per topics are in a specific folder with specific config files
+<br>- Read readme.txt for a complete of changes</p></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+      </div>
+
+      <div class="col-xs-12 col-md-3 section_downsize">
+        
+
+        <div class="add_margin_20">
+          <h5 class="add_bottom_rule add_margin_5">MATLAB Release</h5>
+          <div>MATLAB 7.9 (R2009b)</div>
+        </div>
+
+          <div class="add_margin_20">
+    <div data-tags-path="">
+      <h5 class="add_bottom_rule add_margin_5">Tags
+        <span id="add_tags_span" class="add-tags-span pull_right ">
+          <a href="#" class="add-tags-link">Add Tags</a>
+        </span>
+      </h5>
+      <div id="tags" class="tag-list">
+          <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22addidive%20kernel%20approximation%22" class="tag_component" rel="nofollow">addidive kernel a...</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22bag%20of%20features%22" class="tag_component" rel="nofollow">bag of features</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22color%20histograms%22" class="tag_component" rel="nofollow">color histograms</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22densesift%22" class="tag_component" rel="nofollow">densesift</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22dictionary%20learning%22" class="tag_component" rel="nofollow">dictionary learning</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22large%20scale%20svm%22" class="tag_component" rel="nofollow">large scale svm</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22lbp%22" class="tag_component" rel="nofollow">lbp</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22ldp%22" class="tag_component" rel="nofollow">ldp</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22liblinear%22" class="tag_component" rel="nofollow">liblinear</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22pegasos%22" class="tag_component" rel="nofollow">pegasos</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22pixels%20patches%22" class="tag_component" rel="nofollow">pixels patches</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22sparse%20learning%22" class="tag_component" rel="nofollow">sparse learning</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22svm%22" class="tag_component" rel="nofollow">svm</a> <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=tag:%22toolbox%22" class="tag_component" rel="nofollow">toolbox</a>
+      </div>
+
+      <div id="add_tags_form">
+        <form accept-charset="UTF-8" action="/matlabcentral/fileexchange/tags/create" data-remote="true" id="add_new_tags_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="gKaZJ72aRxy+t8/GC3gmv7AHsNmmrRoec1zi0OXj/X8=" type="hidden"></div>
+  <input name="id" value="29800" type="hidden">
+  <input id="add_tags_profile_id" name="profile_id" value="6866457" type="hidden">
+  <div class="multicomplete"><input class="form-control add_margin_5 multicomplete-input ui-autocomplete-input" id="add_tags" autocomplete="off" type="text"></div>
+  <button class="btn btn-xs companion_btn btn_color_blue cancel_button" type="button">Cancel</button>
+  <input class="btn btn-xs btn_secondary save_button" value="Save" type="submit">
+</form>
+      </div>
+    </div>
+  </div>
+
+<script>
+  $("#add_tags").multicomplete({
+    data_source: { url: "/matlabcentral/fileexchange/tags/auto_suggest" }
+  });
+
+  $(".add-tags-link").click(function() {
+    $("#add_tags_form").show();
+    $("#add_tags").focus();
+    return false;
+  });
+
+  $("#add_tags_form .cancel_button").click(function() {
+    $("#add_tags").val('').blur();
+    $("#add_tags_form").hide();
+    return false;
+  });
+
+  $("#add_new_tags_form").on('ajax:complete', function(){
+    $('.multicomplete > .multicomplete-selected-item').remove()
+    $("#add_tags").val('').blur();
+    $("#add_tags_form").hide();
+    return false;
+  });
+</script>
+
+
+        
+
+        <div class="panel panel-default panel_topbar">
+  <div class="panel-heading add_background_cover add_font_color_white" style="min-height: 110px; background: #fff url('/images/nextgen/callouts/fileexchange-addons-spotlight.png') 45% 50%/cover no-repeat; ">
+  </div>
+  <div class="panel-body add_border_color_green">
+		<p>Download apps, toolboxes, and other File Exchange content using Add-On Explorer in MATLAB.</p>
+		<p class="cta">
+			<a href="https://www.mathworks.com/videos/add-on-explorer-106745.html">» Watch video</a>
+		</p>
+  </div>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+
+      <div class="tab-pane" id="functions_tab">
+        <div class="row">
+    <div class="col-xs-3">
+      <div class="package__file-list single_tier functions" data-pane="scroll">
+            <h4>reco_toolbox/</h4>
+          <ul class="nav nav-list nav--file-list list-inline">
+              <li id="function_5185684" class="selected" title="config_databases.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/config_databases.m/index.html?access_key=" title="config_databases.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/config_databases.m/index.html?access_key=">config_databases.m</a>
+              </li>
+              <li id="function_5185788" class="" title="demo_homker.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/demo_homker.m/index.html?access_key=" title="demo_homker.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/demo_homker.m/index.html?access_key=">demo_homker.m</a>
+              </li>
+              <li id="function_5185793" class="" title="extract_bag_of_features.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/extract_bag_of_features.m/index.html?access_key=" title="extract_bag_of_features.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/extract_bag_of_features.m/index.html?access_key=">extract_bag_of_features.m</a>
+              </li>
+              <li id="function_5185794" class="" title="extract_direct_features.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/extract_direct_features.m/index.html?access_key=" title="extract_direct_features.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/extract_direct_features.m/index.html?access_key=">extract_direct_features.m</a>
+              </li>
+              <li id="function_5185910" class="" title="mexme_reco.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/mexme_reco.m/index.html?access_key=" title="mexme_reco.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/mexme_reco.m/index.html?access_key=">mexme_reco.m</a>
+              </li>
+              <li id="function_5185916" class="" title="scenes15_config_classifier.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/scenes15_config_classifier.m/index.html?access_key=" title="scenes15_config_classifier.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/scenes15_config_classifier.m/index.html?access_key=">scenes15_config_classifier.m</a>
+              </li>
+              <li id="function_5185920" class="" title="scenes15_config_descriptors.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/scenes15_config_descriptors.m/index.html?access_key=" title="scenes15_config_descriptors.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/scenes15_config_descriptors.m/index.html?access_key=">scenes15_config_descriptors.m</a>
+              </li>
+              <li id="function_5185923" class="" title="scenes15_config_encoding.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/scenes15_config_encoding.m/index.html?access_key=" title="scenes15_config_encoding.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/scenes15_config_encoding.m/index.html?access_key=">scenes15_config_encoding.m</a>
+              </li>
+              <li id="function_5185926" class="" title="scenes15_config_features.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/scenes15_config_features.m/index.html?access_key=" title="scenes15_config_features.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/scenes15_config_features.m/index.html?access_key=">scenes15_config_features.m</a>
+              </li>
+              <li id="function_5185929" class="" title="setup_reco_toolbox.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/setup_reco_toolbox.m/index.html?access_key=" title="setup_reco_toolbox.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/setup_reco_toolbox.m/index.html?access_key=">setup_reco_toolbox.m</a>
+              </li>
+              <li id="function_5185933" class="" title="simple_train.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/simple_train.m/index.html?access_key=" title="simple_train.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/simple_train.m/index.html?access_key=">simple_train.m</a>
+              </li>
+          </ul>
+            <h4>reco_toolbox/core/</h4>
+          <ul class="nav nav-list nav--file-list list-inline">
+              <li id="function_5185685" class="" title="auroc(tp, fp)">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/auroc.m/index.html?access_key=" title="auroc(tp, fp)" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/auroc.m/index.html?access_key=">auroc(tp, fp)</a>
+              </li>
+              <li id="function_5185686" class="" title="basicroc.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/basicroc.m/index.html?access_key=" title="basicroc.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/basicroc.m/index.html?access_key=">basicroc.m</a>
+              </li>
+              <li id="function_5185693" class="" title="confmatrix.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/confmatrix.m/index.html?access_key=" title="confmatrix.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/confmatrix.m/index.html?access_key=">confmatrix.m</a>
+              </li>
+              <li id="function_5185694" class="" title="d2uint8_image(I)">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/d2uint8_image.m/index.html?access_key=" title="d2uint8_image(I)" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/d2uint8_image.m/index.html?access_key=">d2uint8_image(I)</a>
+              </li>
+              <li id="function_5185704" class="" title="display_dico.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/display_dico.m/index.html?access_key=" title="display_dico.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/display_dico.m/index.html?access_key=">display_dico.m</a>
+              </li>
+              <li id="function_5185705" class="" title="dl_spyr.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/dl_spyr.m/index.html?access_key=" title="dl_spyr.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/dl_spyr.m/index.html?access_key=">dl_spyr.m</a>
+              </li>
+              <li id="function_5185709" class="" title="errorbarbar(x,y,E,barSettings,lineSettings)">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/errorbarbar.m/index.html?access_key=" title="errorbarbar(x,y,E,barSettings,lineSettings)" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/errorbarbar.m/index.html?access_key=">errorbarbar(x,y,E,barSettings,li...</a>
+              </li>
+              <li id="function_5185714" class="" title="gen_dgauss(sigma)">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/gen_dgauss.m/index.html?access_key=" title="gen_dgauss(sigma)" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/gen_dgauss.m/index.html?access_key=">gen_dgauss(sigma)</a>
+              </li>
+              <li id="function_5185715" class="" title="gen_gauss(sigma)">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/gen_gauss.m/index.html?access_key=" title="gen_gauss(sigma)" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/gen_gauss.m/index.html?access_key=">gen_gauss(sigma)</a>
+              </li>
+              <li id="function_5185716" class="" title="gen_weight(patch_size , nbin)">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/gen_weight.m/index.html?access_key=" title="gen_weight(patch_size , nbin)" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/gen_weight.m/index.html?access_key=">gen_weight(patch_size , nbin)</a>
+              </li>
+              <li id="function_5185733" class="" title="mexLasso.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/mexLasso.m/index.html?access_key=" title="mexLasso.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/mexLasso.m/index.html?access_key=">mexLasso.m</a>
+              </li>
+              <li id="function_5185736" class="" title="mexTrainDL.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/mexTrainDL.m/index.html?access_key=" title="mexTrainDL.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/mexTrainDL.m/index.html?access_key=">mexTrainDL.m</a>
+              </li>
+              <li id="function_5185737" class="" title="mexTrainDL_Memory.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/mexTrainDL_Memory.m/index.html?access_key=" title="mexTrainDL_Memory.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/mexTrainDL_Memory.m/index.html?access_key=">mexTrainDL_Memory.m</a>
+              </li>
+              <li id="function_5185748" class="" title="normalize.m">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/normalize.m/index.html?access_key=" title="normalize.m" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/normalize.m/index.html?access_key=">normalize.m</a>
+              </li>
+              <li id="function_5185759" class="" title="rotateticklabel(h,rot,demo)">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/rotateticklabel.m/index.html?access_key=" title="rotateticklabel(h,rot,demo)" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/rotateticklabel.m/index.html?access_key=">rotateticklabel(h,rot,demo)</a>
+              </li>
+              <li id="function_5185765" class="" title="sp_dense_sift(I, grid_spacing, patch_size , sigma_edge)">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/sp_dense_sift.m/index.html?access_key=" title="sp_dense_sift(I, grid_spacing, patch_size , sigma_edge)" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/sp_dense_sift.m/index.html?access_key=">sp_dense_sift(I, grid_spacing, p...</a>
+              </li>
+              <li id="function_5185766" class="" title="sp_find_sift_grid(I, grid_x, grid_y, patch_size, sigma_edge)">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/sp_find_sift_grid.m/index.html?access_key=" title="sp_find_sift_grid(I, grid_x, grid_y, patch_size, sigma_edge)" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/sp_find_sift_grid.m/index.html?access_key=">sp_find_sift_grid(I, grid_x, gri...</a>
+              </li>
+              <li id="function_5185773" class="" title="tick2text(varargin)">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/tick2text.m/index.html?access_key=" title="tick2text(varargin)" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/core/tick2text.m/index.html?access_key=">tick2text(varargin)</a>
+              </li>
+          </ul>
+      </div>
+    </div>
+    <div class="col-xs-9">
+      <div class="package__file-content">
+        <div class="panel panel-default package__file-content_panel" id="functions_iframe_holder">
+          <iframe id="functions_iframe" src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/index.htm" style="border: medium none; visibility: visible; height: 201px;" scrolling="no" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- This JS would later be moved to its own file -->
+<script type="text/javascript">
+  // resize iframe on load as per the content of the first selected contained add-on
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    resizeIframePerContents();
+  });
+
+  // resize iframe when coming from the Search page or on page refresh/reload
+  $('.package__file-content_panel iframe').on("load", function () {
+    resizeIframePerContents();
+  });
+
+  $(".nav-tab-content").click(function(clickEvent) {
+    clickEvent.preventDefault();
+    var tabName = $(".all-tabs-container .tab-pane.active")[0].getAttribute('id').split('_')[0];
+    var pane = $("#" + tabName + "_tab");
+    var iframe = document.getElementById(tabName + "_iframe");
+
+    var clickedElement = $(clickEvent.currentTarget);
+    var selectedElement = clickedElement.parent("li");
+    var typeMLX = clickedElement[0].getAttribute('data-type-mlx');
+    var iframeName = iframe.id;
+    /*
+    The line below handles the case when the contained add-ons list is very long.
+    Scrolls to the top of the browser window and adds an offset, which is the position of the .all-tabs-container + 100px. 100px is the offset for how tall the global navigation is.
+   */
+    $('html,body').scrollTop($('.all-tabs-container').offset().top - 100);
+
+    pane.find(".nav-list .selected").removeClass("selected");
+    selectedElement.addClass("selected");
+    iframe.contentWindow.location.replace(clickedElement.data("iframeSrc"));
+
+    if (typeMLX == "true") {
+      loadViewerInIframe(iframeName);
+    } else {
+      $("#" + iframeName).load(function () { initIframe(iframeName) });
+    }
+  });
+
+  function resizeIframePerContents() {
+    var activeTabName = $('.nav-tabs .active a')[0].getAttribute('href');
+    if (activeTabName != '#overview_tab') {
+      var tabName = $(".all-tabs-container .tab-pane.active")[0].getAttribute('id').split('_')[0];
+      var iframeName = $("#" + tabName + "_iframe")[0].getAttribute('id');
+      var typeMLX = $(".tab-pane.active li.selected")[0].children[0].getAttribute('data-type-mlx');
+      if (typeMLX == "true") {
+          loadViewerInIframe(iframeName);
+      } else {
+          initIframe(iframeName);
+      }
+    }
+  }
+
+  function loadViewerInIframe(iframeName) {
+    var resizeIframe = function () {
+      $("#" + iframeName).iFrameResize({
+        'heightCalculationMethod': 'lowestElement',
+        // To leave a buffer zone in case the horizontal scroll bar appears (which would also cause a vertical scroll bar to appear)
+        'bodyMargin':'0 20px',
+        'autoResize' : false,
+        'checkOrigin': false
+      });
+    };
+    var clickChannel = new MW.postmessagechannel.PostMessageChannel(window, '__linkclk__');
+    clickChannel.listen();
+    clickChannel.on('scrollTo', function (message) {
+      var scrolltopAdjustment = $("#" + tabName + "_iframe").offset().top;
+      $('html, body').animate({scrollTop: message.body.scrollOffset + scrolltopAdjustment});
+    });
+    clickChannel.on('openMatlabLink', function (message) {
+      var matlabCommand = message.body.url.replace(/^matlab:/, "");
+      alert("This is a MATLAB command.  Please type: " + matlabCommand + " into the MATLAB command window to run it.");
+    });
+
+    resizeIframe();
+    window.addEventListener('resize', function () { resizeIframe(); });
+  }
+
+  function getDocHeight(doc) {
+      doc = doc || document;
+      var body = doc.body, html = doc.documentElement;
+      var height = Math.max( body.scrollHeight, body.offsetHeight,
+          html.clientHeight, html.scrollHeight, html.offsetHeight );
+      return height;
+  }
+
+  function initIframe(id) {
+    var ifrm = document.getElementById(id);
+    var doc = ifrm.contentDocument ? ifrm.contentDocument : ifrm.contentWindow.document;
+    openLinksInNewTab(doc);
+    setIframeHeight(ifrm, doc);
+  }
+
+  function openLinksInNewTab(doc) {
+    $(doc).find('a[href^="http"],a[href^="https"]').attr('target', '_TOP');
+  }
+
+  function setIframeHeight(ifrm, doc) {
+      ifrm.style.visibility = 'hidden';
+      ifrm.style.height = "10px"; // reset to minimal height ...
+      // IE opt. for bing/msn needs a bit added or scrollbar appears
+      ifrm.style.height = getDocHeight( doc ) + 25 + "px";
+      ifrm.style.visibility = 'visible';
+  }
+
+  /* Truncate text from 35 characters to 32, adds elipses */
+  $('.package__file-list.single_tier ul.nav>li>a').each(function() {
+    if($(this).text().length > 35 ) {
+      $(this).attr("title", $(this).html()).text($(this).text().substr(0,32)).append('...');;
+    }
+  });
+
+</script>
+      </div>
+      <div class="tab-pane active" id="examples_tab">
+        <div class="row">
+    <div class="col-xs-3">
+      <div class="package__file-list single_tier examples" data-pane="scroll">
+            <h4>reco_toolbox/html/</h4>
+          <ul class="nav nav-list nav--file-list list-inline">
+              <li id="example_5185795" class="" title="demo_denseCOLOR">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_denseCOLOR.html?access_key=" title="demo_denseCOLOR" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_denseCOLOR.html?access_key=">demo_denseCOLOR</a>
+              </li>
+              <li id="example_5185803" class="" title="demo_denseMBLBP">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_denseMBLBP.html?access_key=" title="demo_denseMBLBP" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_denseMBLBP.html?access_key=">demo_denseMBLBP</a>
+              </li>
+              <li id="example_5185809" class="" title="demo_denseMBLDP">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_denseMBLDP.html?access_key=" title="demo_denseMBLDP" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_denseMBLDP.html?access_key=">demo_denseMBLDP</a>
+              </li>
+              <li id="example_5185819" class="" title="demo_densePATCH">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_densePATCH.html?access_key=" title="demo_densePATCH" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_densePATCH.html?access_key=">demo_densePATCH</a>
+              </li>
+              <li id="example_5185829" class="" title="demo_denseSIFT">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_denseSIFT.html?access_key=" title="demo_denseSIFT" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_denseSIFT.html?access_key=">demo_denseSIFT</a>
+              </li>
+              <li id="example_5185849" class="" title="demo_mlhmslbp_spyr">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_mlhmslbp_spyr.html?access_key=" title="demo_mlhmslbp_spyr" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_mlhmslbp_spyr.html?access_key=">demo_mlhmslbp_spyr</a>
+              </li>
+              <li id="example_5185864" class="selected" title="demo_mlhmsldp_spyr">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_mlhmsldp_spyr.html?access_key=" title="demo_mlhmsldp_spyr" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_mlhmsldp_spyr.html?access_key=">demo_mlhmsldp_spyr</a>
+              </li>
+              <li id="example_5185879" class="" title="demo_mlhmslsd_spyr">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_mlhmslsd_spyr.html?access_key=" title="demo_mlhmslsd_spyr" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_mlhmslsd_spyr.html?access_key=">demo_mlhmslsd_spyr</a>
+              </li>
+              <li id="example_5185895" class="" title="demo_mlhoee_spyr">
+                <a class="nav-tab-content" href="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_mlhoee_spyr.html?access_key=" title="demo_mlhoee_spyr" data-type-mlx="false" data-iframe-src="/matlabcentral/mlc-downloads/downloads/submissions/29800/versions/3/previews/reco_toolbox/html/demo_mlhoee_spyr.html?access_key=">demo_mlhoee_spyr</a>
+              </li>
+          </ul>
+      </div>
+    </div>
+    <div class="col-xs-9">
+      <div class="package__file-content">
+        <div class="panel panel-default package__file-content_panel" id="examples_iframe_holder">
+          <iframe id="examples_iframe" src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/demo_mlhmsldp_spyr.htm" style="border: medium none; visibility: visible; height: 6403px;" scrolling="no" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- This JS would later be moved to its own file -->
+<script type="text/javascript">
+  // resize iframe on load as per the content of the first selected contained add-on
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    resizeIframePerContents();
+  });
+
+  // resize iframe when coming from the Search page or on page refresh/reload
+  $('.package__file-content_panel iframe').on("load", function () {
+    resizeIframePerContents();
+  });
+
+  $(".nav-tab-content").click(function(clickEvent) {
+    clickEvent.preventDefault();
+    var tabName = $(".all-tabs-container .tab-pane.active")[0].getAttribute('id').split('_')[0];
+    var pane = $("#" + tabName + "_tab");
+    var iframe = document.getElementById(tabName + "_iframe");
+
+    var clickedElement = $(clickEvent.currentTarget);
+    var selectedElement = clickedElement.parent("li");
+    var typeMLX = clickedElement[0].getAttribute('data-type-mlx');
+    var iframeName = iframe.id;
+    /*
+    The line below handles the case when the contained add-ons list is very long.
+    Scrolls to the top of the browser window and adds an offset, which is the position of the .all-tabs-container + 100px. 100px is the offset for how tall the global navigation is.
+   */
+    $('html,body').scrollTop($('.all-tabs-container').offset().top - 100);
+
+    pane.find(".nav-list .selected").removeClass("selected");
+    selectedElement.addClass("selected");
+    iframe.contentWindow.location.replace(clickedElement.data("iframeSrc"));
+
+    if (typeMLX == "true") {
+      loadViewerInIframe(iframeName);
+    } else {
+      $("#" + iframeName).load(function () { initIframe(iframeName) });
+    }
+  });
+
+  function resizeIframePerContents() {
+    var activeTabName = $('.nav-tabs .active a')[0].getAttribute('href');
+    if (activeTabName != '#overview_tab') {
+      var tabName = $(".all-tabs-container .tab-pane.active")[0].getAttribute('id').split('_')[0];
+      var iframeName = $("#" + tabName + "_iframe")[0].getAttribute('id');
+      var typeMLX = $(".tab-pane.active li.selected")[0].children[0].getAttribute('data-type-mlx');
+      if (typeMLX == "true") {
+          loadViewerInIframe(iframeName);
+      } else {
+          initIframe(iframeName);
+      }
+    }
+  }
+
+  function loadViewerInIframe(iframeName) {
+    var resizeIframe = function () {
+      $("#" + iframeName).iFrameResize({
+        'heightCalculationMethod': 'lowestElement',
+        // To leave a buffer zone in case the horizontal scroll bar appears (which would also cause a vertical scroll bar to appear)
+        'bodyMargin':'0 20px',
+        'autoResize' : false,
+        'checkOrigin': false
+      });
+    };
+    var clickChannel = new MW.postmessagechannel.PostMessageChannel(window, '__linkclk__');
+    clickChannel.listen();
+    clickChannel.on('scrollTo', function (message) {
+      var scrolltopAdjustment = $("#" + tabName + "_iframe").offset().top;
+      $('html, body').animate({scrollTop: message.body.scrollOffset + scrolltopAdjustment});
+    });
+    clickChannel.on('openMatlabLink', function (message) {
+      var matlabCommand = message.body.url.replace(/^matlab:/, "");
+      alert("This is a MATLAB command.  Please type: " + matlabCommand + " into the MATLAB command window to run it.");
+    });
+
+    resizeIframe();
+    window.addEventListener('resize', function () { resizeIframe(); });
+  }
+
+  function getDocHeight(doc) {
+      doc = doc || document;
+      var body = doc.body, html = doc.documentElement;
+      var height = Math.max( body.scrollHeight, body.offsetHeight,
+          html.clientHeight, html.scrollHeight, html.offsetHeight );
+      return height;
+  }
+
+  function initIframe(id) {
+    var ifrm = document.getElementById(id);
+    var doc = ifrm.contentDocument ? ifrm.contentDocument : ifrm.contentWindow.document;
+    openLinksInNewTab(doc);
+    setIframeHeight(ifrm, doc);
+  }
+
+  function openLinksInNewTab(doc) {
+    $(doc).find('a[href^="http"],a[href^="https"]').attr('target', '_TOP');
+  }
+
+  function setIframeHeight(ifrm, doc) {
+      ifrm.style.visibility = 'hidden';
+      ifrm.style.height = "10px"; // reset to minimal height ...
+      // IE opt. for bing/msn needs a bit added or scrollbar appears
+      ifrm.style.height = getDocHeight( doc ) + 25 + "px";
+      ifrm.style.visibility = 'visible';
+  }
+
+  /* Truncate text from 35 characters to 32, adds elipses */
+  $('.package__file-list.single_tier ul.nav>li>a').each(function() {
+    if($(this).text().length > 35 ) {
+      $(this).attr("title", $(this).html()).text($(this).text().substr(0,32)).append('...');;
+    }
+  });
+
+</script>
+      </div>
+</div>
+
+
+            </div>
+          </div>
+        </div>
+        <!-- end-of-the-tabs -->
+      </div>
+    </div>
+    <!-- end-of-the-page-container -->
+    
+    <script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/show.js" type="text/javascript"></script>
+  </div>
+<script type="text/javascript">
+  $(function () {
+    $('[data-toggle="popover"]').popover({
+      html: true
+    });
+  });
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  })
+</script>
+
+
+
+  
+
+
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+         
+ 
+
+
+<div id="location_content" style="display:none;"></div>
+
+
+<div class="modal fade" id="country-unselected" translate="no">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <object type="image/svg+xml" class="mw_logo" alt="MathWorks" data="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/pic-header-mathworks-logo2.svg" width="167px">
+          <img alt="MathWorks" src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/pic-header-mathworks-logo.png" width="167px">
+        </object>
+      </div>
+      <div class="modal-body">
+        <div class="row add_margin_40">
+          <div class="col-xs-12">
+            <h1 class="icon-globe icon_color_secondary">Select Your Country</h1>
+            <p>Choose your country to get translated content where 
+available and see local events and offers. Based on your location, we 
+recommend that you select: <strong class="text_location"></strong>.</p>
+            <a href="#" id="domain_select_button" class="btn btn_secondary" data-dismiss="modal"></a>
+          </div>
+        </div>
+        <p>You can also select a location from the following list:</p>
+        <div class="row add_margin_30">
+          <div class="col-sm-4 col-md-3">
+            <h3 class="add_bottom_rule">Americas</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://www.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="canada_select">Canada</a> (English)</li>
+              <li><a href="https://www.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="united_states_select">United States</a> (English)</li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-6">
+            <h3 class="add_bottom_rule">Europe</h3>
+            <div class="row">
+              <div class="col-xs-6 col-sm-12 col-md-6">
+                <ul class="list-unstyled add_margin_0_sm">
+                  <li><a href="https://nl.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="belgium_select">Belgium</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="denmark_select">Denmark</a> (English)</li>
+                  <li><a href="https://de.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="deutschland_select">Deutschland</a> (Deutsch)</li>
+                  <li><a href="https://es.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="espana_select">España</a> (Español)</li>
+                  <li><a href="https://se.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="finland_select">Finland</a> (English)</li>
+                  <li><a href="https://fr.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="france_select">France</a> (Français)</li>
+                  <li><a href="https://uk.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="ireland_select">Ireland</a> (English)</li>
+                  <li><a href="https://it.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="italia_select">Italia</a> (Italiano)</li>
+                  <li><a href="https://nl.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="luxembourg_select">Luxembourg</a> (English)</li>
+                </ul>
+              </div>
+              <div class="col-xs-6 col-sm-12 col-md-6">
+                <ul class="list-unstyled">
+                  <li><a href="https://nl.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="netherlands_select">Netherlands</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="norway_select">Norway</a> (English)</li>
+                  <li><a href="https://de.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="osterreich_select">Österreich</a> (Deutsch)</li>
+                  <li><a href="https://www.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="portugal_select">Portugal</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="sweden_select">Sweden</a> (English)</li>
+                  <li>Switzerland
+                    <ul class="list-unstyled add_indent_20">
+                      <li><a href="https://ch.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" id="swiss_german" class="switzerland_select">Deutsch</a></li>
+                      <li><a href="https://ch.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" id="swiss_english" class="switzerland_select">English</a></li>
+                      <li><a href="https://ch.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" id="swiss_french">Français</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="https://uk.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="united_kingdom_select">United Kingdom</a> (English)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <h3 class="add_bottom_rule">Asia Pacific</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://au.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="australia_select">Australia</a> (English)</li>
+              <li><a href="https://in.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="india_select">India</a> (English)</li>
+              <li><a href="https://au.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="new_zealand_select">New Zealand</a> (English)</li>
+              <li><a href="https://cn.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="china_select">中国</a> (简体中文)</li>
+              <li><a href="https://jp.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="japan_select">日本</a> (日本語)</li>
+              <li><a href="https://kr.mathworks.com/includes_content/domainRedirect/country_select_alt.html?action=changeCountry&amp;uri=%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;domain=www.mathworks.com&amp;s_tid=gn_loc_drop" class="korea_select">한국</a> (한국어)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-center"><strong><a href="https://www.mathworks.com/company/worldwide/">See all countries</a></strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  
+  <!-- MOBILE CTA - Begin -->
+  <div class="cta_container_mobile visible-sm visible-xs">
+    <div class="container-fluid">      
+      <div class="row add_margin_20">
+        <div class="col-xs-12">
+          <div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="https://www.mathworks.com/programs/trials/trial_request.html?eventid=56763&amp;s_iid=mlcfx_trial_mlc_cta1" class="icon-download">Trial software</a></li>
+</ul>
+</div> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MOBILE CTA - End -->
+
+  <footer id="footer" class="bs-footer"> 
+      <!-- FAT FOOTER - Begin --> 
+        <div class="fat_footer_container">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="grid_192">
+<div class="fat_footer">
+<div class="execmatlabweb"> <!--Requried for Doc Test -->
+<div class="row">
+<div class="col-xs-12 col-md-12 col-lg-9 col-lg-push-3 add_margin_20">
+<div class="row">
+<div class="col-xs-12 col-sm-2">
+<h5>Explore Products</h5>
+<ul class="list-unstyled">
+<li><a href="https://www.mathworks.com/products/matlab.html?s_tid=hp_ff_p_matlab">MATLAB</a></li>
+<li><a href="https://www.mathworks.com/products/simulink.html?s_tid=hp_ff_p_simulink">Simulink</a></li>
+<li><a href="https://www.mathworks.com/academia/student_version.html?s_tid=hp_ff_p_student">Student Software</a></li>
+<li><a href="https://www.mathworks.com/hardware-support/home.html?s_tid=hp_ff_p_hwsupport">Hardware Support</a></li>
+<li><a href="https://www.mathworks.com/matlabcentral/fileexchange/?s_tid=hp_ff_p_fx">File Exchange</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<h5>Try or Buy</h5>
+<ul class="list-unstyled">
+<li><a href="https://www.mathworks.com/downloads/web_downloads/?s_iid=hp_ff_t_downloads">Downloads</a></li>
+<li><a href="https://www.mathworks.com/programs/trials/trial_request.html?s_iid=hp_ff_p_trial">Trial Software</a></li>
+<li><a href="https://www.mathworks.com/company/aboutus/contact_us/contact_sales.html?s_iid=hp_ff_t_sales">Contact Sales</a></li>
+<li><a href="https://www.mathworks.com/pricing-licensing/?s_iid=hp_ff_t_pricing">Pricing and Licensing</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<h5>Learn to Use</h5>
+<ul class="list-unstyled">
+<li><a href="https://www.mathworks.com/help/?s_tid=hp_ff_l_doc">Documentation</a></li>
+<li><a href="https://www.mathworks.com/support/learn-with-matlab-tutorials.html?s_tid=hp_ff_l_tutorials">Tutorials</a></li>
+<li><a href="https://www.mathworks.com/examples/?s_tid=hp_ff_l_examples">Examples </a></li>
+<li><a href="https://www.mathworks.com/videos.html?s_tid=hp_ff_l_videos">Videos and Webinars</a></li>
+<li><a href="https://www.mathworks.com/services/training.html?s_tid=hp_ff_l_training">Training</a></li>
+</ul>
+</div>
+<div class="clearfix" id="offcanvas_clearfix" style="display:none"></div>
+<div class="col-xs-12 col-sm-2">
+<h5>Get Support</h5>
+<ul class="list-unstyled">
+<li><a href="https://www.mathworks.com/support/install-matlab.html?s_tid=hp_ff_s_install">Installation Help</a></li>
+<li><a href="https://www.mathworks.com/matlabcentral/answers/?s_tid=hp_ff_s_answers">Answers </a></li>
+<li><a href="https://www.mathworks.com/services/consulting.html?s_tid=hp_ff_s_consulting">Consulting</a></li>
+<li><a href="https://www.mathworks.com/licensecenter/?s_tid=hp_ff_s_license">License Center</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<h5>About <span translate="no">MathWorks</span></h5>
+<ul class="list-unstyled">
+<li><a href="https://www.mathworks.com/company/jobs/opportunities/?s_tid=hp_ff_a_careers">Careers</a></li>
+<li><a href="https://www.mathworks.com/company/newsroom.html?s_tid=hp_ff_a_newsroom">Newsroom</a></li>
+<li><a href="https://www.mathworks.com/company/aboutus/soc_mission.html?s_tid=hp_ff_a_socialmission">Social Mission</a></li>
+<li><a href="https://www.mathworks.com/company.html?s_tid=hp_ff_a_company">About <span translate="no">MathWorks</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-md-12 col-lg-3 col-lg-pull-9">
+<h4 class="add_font_futura_medium add_margin_0"><span translate="no">MathWorks<span translate="no"></span></span></h4>
+<p><em>Accelerating the pace of engineering and science</em></p>
+<p><span translate="no">MathWorks</span> is the leading developer of mathematical computing software for engineers and scientists.</p>
+<p><a href="https://www.mathworks.com/discovery.html?s_tid=all_disc_mw_ff">Discover...</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- FAT FOOTER - End -->
+    <!-- BASIC FOOTER CONTENT - Begin --> 
+    <div class="container"> 
+      <div class="footer" translate="no">
+<div class="row">
+<div class="col-xs-12 col-md-9">
+<ul class="countrynav" id="countrynav">
+<li class="footernav_country">
+<a href="javascript:void(0);" data-toggle="modal" data-target="#country-unselected">
+<span class="icon-globe icon_color_quinary icon_16"></span>United States
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<ul class="footernav">
+<li class="footernav_patents"><a href="https://www.mathworks.com/company/aboutus/policies_statements/patents.html?s_tid=gf_pat">Patents</a></li>
+<li class="footernav_trademarks"><a href="https://www.mathworks.com/company/aboutus/policies_statements/trademarks.html?s_tid=gf_trd">Trademarks</a></li>
+<li class="footernav_privacy"><a href="https://www.mathworks.com/company/aboutus/policies_statements.html?s_tid=gf_priv">Privacy Policy</a></li>
+<li class="footernav_piracy"><a href="https://www.mathworks.com/company/aboutus/policies_statements/piracy.html?s_tid=gf_pir">Preventing Piracy</a></li>
+<li class="footernav_terms"><a href="https://www.mathworks.com/matlabcentral/termsofuse.html">Terms of Use</a></li>
+</ul>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<p class="copyright" translate="no">© 1994-2017 The MathWorks, Inc.</p>
+</div>
+<div class="clearfix visible-sm add_margin_10"></div>
+<div class="col-xs-12 col-md-3">
+<div class="social_media">
+<ul class="social_media_icons">
+<li>
+<a href="http://www.facebook.com/MATLAB" target="_blank" class="svg_link">
+<img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/ico-facebook.svg" alt="Facebook" class="ico_facebook">
+</a>
+</li>
+<li>
+<a href="http://www.twitter.com/MATLAB" target="_blank" class="svg_link">
+<img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/ico-twitter.svg" alt="Twitter" class="ico_twitter">
+</a>
+</li>
+<li>
+<a href="https://plus.google.com/117177960465154322866?prsrc=3" target="_blank" class="svg_link">
+<img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/ico-google-plus.svg" alt="Google+" class="ico_google">
+</a>
+</li>
+<li>
+<a href="http://www.linkedin.com/company/the-mathworks_2" target="_blank" class="svg_link">
+<img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/ico-linkedin.svg" alt="LinkedIn" class="ico_linkedin">
+</a>
+</li>
+<li>
+<a href="https://www.mathworks.com/company/rss.html" class="svg_link">
+<img src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/ico-rss.svg" alt="RSS" class="ico_rss">
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<p><em>Join the conversation</em></p>
+</div>
+</div>
+</div>
+</div>
+<!-- BEGIN Adobe DTM -->
+<script type="text/javascript">
+try {
+_satellite.pageBottom();
+} catch (e) {
+//something went wrong
+}
+</script><script>
+if (typeof qcord == 'undefined') {
+  var qcord;
+}
+var qcrev;
+if (typeof qclabels == 'undefined') {
+  var qclabels;
+} 
+ var ezt = ezt ||[];
+
+ (function(){
+   var elem = document.createElement('script');
+   elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://pixel") + ".quantserve.com/aquant.js?a=p-zfNtLVVEHXE-1";
+   elem.async = true;
+   elem.type = "text/javascript";
+   var scpt = document.getElementsByTagName('script')[0];
+   scpt.parentNode.insertBefore(elem,scpt);
+ }());
+
+
+ ezt.push({qacct: 'p-zfNtLVVEHXE-1',
+           orderid: qcord,
+           revenue: qcrev,
+           labels: qclabels
+           });
+</script>
+<noscript>
+  <img src="//pixel.quantserve.com/pixel/p-zfNtLVVEHXE-1.gif?labels=_fp.event.Default" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+</noscript><!-- Google Remarketing Main Tag -->
+<script type="text/javascript">
+/* <![CDATA[ */
+//var google_tag_params = {
+//  section: 'na',
+//  subsection: 'na',
+//  pagetype: 'na',
+//  productcode: 'na',
+//  membertype: 'na',
+//  conversiontype: 'na',
+//  logged_in: 'na'
+//};
+//if (typeof _satellite.getVar("potentialUseQueryString") !== 'undefined' && _satellite.getVar("potentialUseQueryString") !== "") {
+//  google_tag_params.membertype = _satellite.getVar("potentialUseQueryString");
+//}
+//
+//if (typeof _satellite.getVar("eloquaFormName") !== 'undefined' && _satellite.getVar("eloquaFormName ") !== "") {
+//  google_tag_params.conversiontype = _satellite.getVar("eloquaFormName");
+//}
+//
+//if (typeof _satellite.getVar("productInfo") !== 'undefined' && _satellite.getVar("productInfo") !== "") {
+//  google_tag_params.productcode = _satellite.getVar("productInfo");
+//}
+//if (document.cookie.match('MW_AL')) {
+//  google_tag_params.logged_in = '1';
+//}
+  
+var google_conversion_id = 1023777138;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/conversion.js">
+</script><iframe name="google_conversion_frame" title="Google conversion frame" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1023777138/?random=1494813304716&amp;cv=8&amp;fst=1494813304716&amp;num=1&amp;fmt=1&amp;guid=ON&amp;u_h=768&amp;u_w=1366&amp;u_ah=728&amp;u_aw=1366&amp;u_cd=24&amp;u_his=7&amp;u_tz=360&amp;u_java=false&amp;u_nplug=0&amp;u_nmime=0&amp;frm=0&amp;url=https%3A%2F%2Fwww.mathworks.com%2Fmatlabcentral%2Ffileexchange%2F29800-scenes-objects-classification-toolbox%3Ffocused%3D5185864%26tab%3Dexample&amp;ref=https%3A%2F%2Fwww.google.com%2F&amp;tiba=Scenes%2FObjects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" height="13" frameborder="0" width="300"></iframe>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1023777138/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+<!-- END Adobe DTM -->
+    </div>
+    <!-- BASIC FAT FOOTER CONTENT - End -->
+  </footer>
+
+    <script src="Scenes_Objects%20classification%20toolbox%20-%20File%20Exchange%20-%20MATLAB%20Central_files/lightbox-min.js"></script> 
+    <script>
+      $(document).ready(function ($) {
+
+        // delegate calls to data-toggle="lightbox"
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+          event.preventDefault();
+          return $(this).ekkoLightbox({
+            onShown: function() {
+				if ($('.ekko-lightbox-container iframe').length) {
+				  $(".ekko-lightbox-container iframe").attr("scrolling","no");
+				  $(".ekko-lightbox-container iframe").load(lightboxIframeHeight);
+				}
+            },
+            onNavigate: function(direction, itemIndex) {
+              if (window.console) {
+                return console.log('Navigating '+direction+'. Current item: '+itemIndex);
+              }
+            }
+          });
+        });
+		
+		// resize
+		$(window).resize(lightboxIframeHeight)	
+
+		// lightbox height function
+		function lightboxIframeHeight() {
+			if ($('.ekko-lightbox-container iframe').length) {
+				whichIframeHeight = $('.ekko-lightbox-container iframe').contents().find('body').height() + 20;
+				$(".ekko-lightbox-container iframe").css("height",whichIframeHeight);
+			}
+		}
+
+        //Programatically call
+        $('#open-image').click(function (e) {
+          e.preventDefault();
+          $(this).ekkoLightbox();
+        });
+        $('#open-youtube').click(function (e) {
+          e.preventDefault();
+          $(this).ekkoLightbox();
+        });
+      });
+    </script> 
+
+
+
+<a class="btn btn_primary" id="go-top" style="display: inline;"><span class="icon-arrow-open-up icon_24"></span></a><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span></body></html>
