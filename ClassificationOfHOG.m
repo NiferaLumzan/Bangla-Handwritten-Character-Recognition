@@ -110,7 +110,7 @@ for digit = 1:numel(testSet)
     labels = repmat(trainingSet(digit).Description, numImages,1);
 
     testFeatures = [testFeatures; features];   %#ok<AGROW>
-    testLabels   = [testLabels; labels];   %#ok<AGROW>
+    testLabels   = [testLabels; labels];   
 end
 
 % Make class predictions using the test features.
