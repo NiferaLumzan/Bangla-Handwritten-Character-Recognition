@@ -4,38 +4,38 @@ testDir = fullfile('E:\8th semester\Thesis\Bangla-Handwritten-Character-Recognit
 
 % imageSet recursively scans the directory tree containing the images.
 trainingSet = imageSet(trainingDir,   'recursive');
-testSet     = imageSet(testDir, 'recursive');
+testSet  = imageSet(testDir, 'recursive');
 
 img = read(trainingSet(1), 1);
-img = imresize(img,[255,255]);
+img = imresize(img, [64,64]);
 
 % Extract HOG features and HOG visualization
-[hog_255x255, vis4x4] = extractHOGFeatures(img,'CellSize',[4 4]);
-plot(vis4x4);
-title({'CellSize = [4 4]'; ['Feature length = ' num2str(length(hog_255x255))]});
+[hog_8x8, vis8x8] = extractHOGFeatures(img,'CellSize',[8 8]);
+% figure;
+% imshow(img); hold on;
+% plot(vis8x8);
+% title({'CellSize = [8 8]'; ['Feature length = ' num2str(length(hog_16x16))]});
 
-cellSize = [4 4];
-hogFeatureSize = length(hog_255x255);
+cellSize = [8 8];
+hogFeatureSize = length(hog_8x8);
 
 trainingFeatures = [];
 trainingLabels   = [];
 
 testFeatures = [];
 testLabels   = [];
-%-----------creating structure for zernike moment------------------%
-
 
 for digit = 1:numel(trainingSet)
     
     numImages = trainingSet(digit).Count;
-    features  = zeros(numImages, hogFeatureSize, 'single');
+    features  = zeros(numImages, hogFeatureSize);
     
     for i = 1:numImages
 
         img = read(trainingSet(digit), i);
 
         % Apply pre-processing steps
-        IM = imresize(img,[255,255]);
+        IM = imresize(img,[64,64]);
         IM = rgb2gray(IM);
         IM = medfilt2(IM);
         M = mean(IM);
@@ -45,10 +45,10 @@ for digit = 1:numel(trainingSet)
         T = adaptthresh(IM, 0.7);   %used adaptthresh to determine threshold to use in binarization operation.
         BW = imbinarize(IM,T);  %Convert image to binary image, specifying the threshold value.
 
-        %----------------erosion-----------------------------%
+        %----------------erosion------------%
         se = strel('line',4,10);
         erodedI = imerode(BW,se);
-        %-----------------dilation---------------------------%
+        %-----------------dilation-----------%
         se1 = strel('line',4,10);
         BW3 = imdilate(erodedI,se1);
         
@@ -66,8 +66,7 @@ for digit = 1:numel(trainingSet)
 end
 
 % classfication using SVM.
-classifier = fitcsvm(trainingFeatures, trainingLabels);
-
+classifier = fitcecoc(trainingFeatures, trainingLabels);
 
 
 %%%%%%%%%%%%%%% Test Dataset %%%%%%%%%%%%%%%%%%
@@ -75,15 +74,15 @@ classifier = fitcsvm(trainingFeatures, trainingLabels);
 
 for digit = 1:numel(testSet)
     
-    numImages = trainingSet(digit).Count;
-    features  = zeros(numImages, hogFeatureSize, 'single');
+    numImages = testSet(digit).Count;
+    features  = zeros(numImages, hogFeatureSize);
 
     for i = 1:numImages
-
+        
         img = read(testSet(digit), i);
-
+        
         % Apply pre-processing steps
-        IM = imresize(img,[255,255]);
+        IM = imresize(img,[64,64]);
         IM = rgb2gray(IM);
         IM = medfilt2(IM);
         M = mean(IM);
@@ -110,14 +109,22 @@ for digit = 1:numel(testSet)
     labels = repmat(trainingSet(digit).Description, numImages,1);
 
     testFeatures = [testFeatures; features];   %#ok<AGROW>
-    testLabels   = [testLabels; labels];   
+    testLabels   = [testLabels; labels];   %#ok<AGROW>
 end
+
+% [testFeatures, testLabels] = helperExtractHOGFeaturesFromImageSet(testSet, hogFeatureSize, cellSize);
 
 % Make class predictions using the test features.
 predictedLabels = predict(classifier, testFeatures);
 
 % Tabulate the results using a confusion matrix.
 confMat = confusionmat(testLabels, predictedLabels);
+
+% Convert confusion matrix into percentage form
+confMatPercentage = bsxfun(@rdivide,confMat,sum(confMat,2));
+
+save('trainingFeaturesHOG.mat','trainingFeatures');
+save('testFeaturesHOG.mat','testFeatures');
 
 % helperDisplayConfusionMatrix(confMat)
 % [C,order] = confusionmat(testLabels,predictedLabels)
