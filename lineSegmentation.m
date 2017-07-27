@@ -1,5 +1,5 @@
 
-inputImageName = 'set_2.jpg'; 
+inputImageName = 'E:/8th semester/Thesis/Bangla-Handwritten-Character-Recognition/set_2.jpg2412.jpg';
 img = imread(inputImageName);
 % img = imresize(img,[500,1000]);
 img = rgb2gray(img);
@@ -62,12 +62,6 @@ for i = 1:row-1
             fullFileName = fullfile('E://8th semester/Thesis/Bangla-Handwritten-Character-Recognition/1.Lines',fileName);
             imwrite(objects,fullFileName,'jpg');
         end        
-%         if(trackFinish ~= finish)
-%             trackFinish = finish; 
-%             isFirst = 1; 
-%         else
-%             isFirst = 0;
-%         end        
     end     
 end
 
